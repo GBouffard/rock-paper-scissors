@@ -1,18 +1,76 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import gameLogic from './services/game-logic';
 import './App.css';
 
+const Button = (props) => (
+  <button
+    onClick={props.onClick}>
+    {props.text}
+  </button>
+);
+
 class App extends Component {
+  constructor() {
+    super();
+    this.choseRock = this.choseRock.bind(this);
+    this.chosePaper = this.chosePaper.bind(this);
+    this.choseScissors = this.choseScissors.bind(this);
+    this.state = {
+      yourHand: null
+    }
+  }
+
+  choseRock() {
+    this.setHandState('Rock');
+  }
+
+  chosePaper() {
+    this.setHandState('Paper');
+  }
+
+  choseScissors() {
+    this.setHandState('Scissors');
+  }
+
+  setHandState(hand) {
+    this.setState({
+      yourHand: hand
+    });
+  }
+
   render() {
+    const cpuHand = gameLogic.choseCPUHand();
+    const result = gameLogic.gameResult(this.state.yourHand, cpuHand);
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          Choose a hand:
+
+          <Button
+            text="Rock"
+            onClick={this.choseRock} />
+
+          <Button
+            text="Paper"
+            onClick={this.chosePaper} />
+
+          <Button
+            text="Scissors"
+            onClick={this.choseScissors} />
+        </div>
+
+        <div>
+          You chose: {this.state.yourHand}
+        </div>
+
+        <div>
+          The CPU chose: {cpuHand}
+        </div>
+
+        <div>
+          Result: {result}
+        </div>
       </div>
     );
   }

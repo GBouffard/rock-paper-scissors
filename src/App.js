@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import gameLogic from './services/game-logic';
 import './App.css';
-
-const Button = (props) => (
-  <button
-    onClick={props.onClick}>
-    {props.text}
-  </button>
-);
+import Button from './components/button';
 
 class App extends Component {
   constructor() {

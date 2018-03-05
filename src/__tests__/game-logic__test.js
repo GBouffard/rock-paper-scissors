@@ -1,9 +1,11 @@
 import gameLogic from '../services/game-logic';
 
 describe('game logic', () => {
-  it('chooses a random hand for the CPU when playing a 1 player game', () => {
-    expect(gameLogic.choseCPUHand())
-      .toEqual('Rock' || 'Paper' || 'Scissors');
+  it('chooses a random RPS hand for the CPU when playing a 1 player game', () => {
+    const chosenCPUHand = gameLogic.choseCPUHand();
+
+    expect(['Rock', 'Paper', 'Scissors'])
+      .toEqual(expect.arrayContaining([chosenCPUHand]))
   });
 
   it('knows when the result of a game is a draw', () => {

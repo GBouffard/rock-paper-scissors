@@ -11,7 +11,9 @@ describe('game logic', () => {
       .toEqual(`It's a Draw!`);
   });
 
-  xit('knows when the player won the game', () => {
+  it('knows when the player won the game', () => {
+    expect(gameLogic.gameResult('Paper', 'Rock'))
+      .toEqual(`You win!`);
   });
 
   xit('knows when the player lost the game', () => {

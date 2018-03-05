@@ -13,9 +13,11 @@ const gameLogic = {
 
   gameResult(firstHand, secondHand) {
     if (firstHand === secondHand) {
-      return `It's a Draw!`
+      return 'It\'s a Draw!'
     } else if (beats[firstHand] === secondHand) {
-      return `You win!`
+      return 'You win!'
+    } else {
+      return 'The CPU wins!'
     }
   }
 };

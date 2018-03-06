@@ -9,3 +9,11 @@
   left:0;
   right:0;
 }
+
+.App__type-game-button {
+  min-width: 200px;
+  min-height: 200px;
+  background-color: orange;
+  border: 6px solid darkslategrey;
+  border-radius: 20px;
+}

@@ -12,6 +12,8 @@ const language = {
 };
 
 const urls = {
+  onePlayerGame: '/images/1_player_game.png',
+  twoPlayersGame: '/images/2_players_game.png',
   rockChoice: '/images/hand_rock.jpg',
   paperChoice: '/images/hand_paper.jpg',
   scissorsChoice: '/images/hand_scissors.jpg'

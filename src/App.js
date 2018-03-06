@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import gameLogic from './services/game-logic';
 import ImageButton from './components/image-button';
+import handChoicesUrl from './constants/game-constants';
 import './App.css';
 
 class App extends Component {
@@ -42,15 +43,15 @@ class App extends Component {
           Choose a hand:
 
           <ImageButton
-            url="/images/hand_rock.jpg"
+            url={handChoicesUrl.rock}
             onClick={this.choseRock} />
 
           <ImageButton
-            url="/images/hand_paper.jpg"
+            url={handChoicesUrl.paper}
             onClick={this.chosePaper} />
 
           <ImageButton
-            url="/images/hand_scissors.jpg"
+            url={handChoicesUrl.scissors}
             onClick={this.choseScissors} />
         </div>
 

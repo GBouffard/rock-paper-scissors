@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import gameLogic from './services/game-logic';
 import HandChoicesSection from './components/hand-choices-section';
 import CompareHandsSection from './components/compare-hands-section';
+import GameResultsSection from './components/game-results-section';
 import {
   hands,
   language
@@ -39,7 +40,7 @@ class App extends Component {
 
   render() {
     const cpuHand = gameLogic.choseCPUHand();
-    const result = gameLogic.gameResult(this.state.playerHand, cpuHand);
+    const results = gameLogic.gameResult(this.state.playerHand, cpuHand);
 
     return (
       <div className="App">
@@ -53,13 +54,8 @@ class App extends Component {
           cpuHand={cpuHand}
           playerHand={this.state.playerHand} />
 
-        <section>
-          <h2>
-            {language.results}
-          </h2>
-
-          {result}
-        </section>
+        <GameResultsSection
+          results={results} />
       </div>
     );
   }

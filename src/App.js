@@ -12,15 +12,22 @@ class App extends Component {
       <div
         className="App">
 
-        <ImageButton
-          url={urls.onePlayerGame}
-          className="App__type-game-button"
-          onClick={() =>{}} />
+        <h1
+          className="App__intro-heading">
+          {language.gameType}
+        </h1>
 
-        <ImageButton
-          url={urls.twoPlayersGame}
-          className="App__type-game-button"
-          onClick={() =>{}} />
+        <div>
+          <ImageButton
+            url={urls.onePlayerGame}
+            className="App__type-game-button"
+            onClick={() =>{}} />
+
+          <ImageButton
+            url={urls.twoPlayersGame}
+            className="App__type-game-button"
+            onClick={() =>{}} />
+        </div>
 
       </div>
     );

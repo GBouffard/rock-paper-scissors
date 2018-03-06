@@ -5,6 +5,7 @@ const hands = {
 }
 
 const language = {
+  gameType: 'Choose your game type:',
   handChoice: 'Choose your destiny:',
   yourChoice: 'You chose:',
   cpuChoice: 'The CPU chose:',

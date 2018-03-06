@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import gameLogic from './services/game-logic';
 import ImageButton from './components/image-button';
-import handChoicesUrl from './constants/game-constants';
+import {
+  hands,
+  language,
+  urls
+} from './constants/game-constants';
 import './App.css';
 
 class App extends Component {
@@ -16,15 +20,15 @@ class App extends Component {
   }
 
   choseRock() {
-    this.setHandState('Rock');
+    this.setHandState(hands.rock);
   }
 
   chosePaper() {
-    this.setHandState('Paper');
+    this.setHandState(hands.paper);
   }
 
   choseScissors() {
-    this.setHandState('Scissors');
+    this.setHandState(hands.scissors);
   }
 
   setHandState(hand) {
@@ -39,35 +43,42 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div>
-          Choose a hand:
+
+        <section>
+          <h2>
+            {language.handChoice}
+          </h2>
 
           <ImageButton
-            url={handChoicesUrl.rock}
+            url={urls.rockChoice}
             onClick={this.choseRock} />
 
           <ImageButton
-            url={handChoicesUrl.paper}
+            url={urls.paperChoice}
             onClick={this.chosePaper} />
 
           <ImageButton
-            url={handChoicesUrl.scissors}
+            url={urls.scissorsChoice}
             onClick={this.choseScissors} />
-        </div>
+        </section>
 
         <section>
           <div>
-            You chose: {this.state.yourHand}
+            {language.yourChoice} {this.state.yourHand}
           </div>
 
           <div>
-            The CPU chose: {cpuHand}
+            {language.cpuChoice} {cpuHand}
           </div>
         </section>
 
-        <div>
-          Result: {result}
-        </div>
+        <section>
+          <h2>
+            {language.results}
+          </h2>
+
+          {result}
+        </section>
       </div>
     );
   }

@@ -1,7 +1,24 @@
-const handChoicesUrl = {
-  rock: '/images/hand_rock.jpg',
-  paper: '/images/hand_paper.jpg',
-  scissors: '/images/hand_scissors.jpg'
+const hands = {
+  rock: 'Rock',
+  paper: 'Paper',
+  scissors: 'Scissors'
+}
+
+const language = {
+  handChoice: 'Choose your destiny:',
+  yourChoice: 'You chose:',
+  cpuChoice: 'The CPU chose:',
+  results: 'Results:'
 };
 
-export default handChoicesUrl;
+const urls = {
+  rockChoice: '/images/hand_rock.jpg',
+  paperChoice: '/images/hand_paper.jpg',
+  scissorsChoice: '/images/hand_scissors.jpg'
+};
+
+export {
+  hands,
+  language,
+  urls
+};

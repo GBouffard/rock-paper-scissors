@@ -9,7 +9,8 @@ const language = {
   handChoice: 'Choose your destiny:',
   yourChoice: 'You chose:',
   cpuChoice: 'The CPU chose:',
-  results: 'Results:'
+  results: 'Results:',
+  backToHomePage: 'Back to home page'
 };
 
 const urls = {

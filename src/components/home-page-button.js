@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Button from './button';
 import { Redirect } from 'react-router-dom';
+import {
+  language
+} from '../constants/game-constants';
 
 const homePageRedirectElement = (
      <Redirect
@@ -23,7 +26,7 @@ export default class HomePageButton extends Component {
   }
 
   render() {
-    let buttonChild = "back to home page";
+    let buttonChild = language.backToHomePage;
 
     if (this.state.backToHome) {
       buttonChild = homePageRedirectElement;

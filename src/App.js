@@ -11,6 +11,7 @@ class App extends Component {
   constructor() {
     super();
     this.playOnePlayerGame = this.playOnePlayerGame.bind(this);
+    this.playTwoPlayersGame = this.playTwoPlayersGame.bind(this);
     this.state = {
       redirect: null
     }
@@ -26,6 +27,12 @@ class App extends Component {
   playOnePlayerGame() {
     this.setState({
       redirect: this.createRedirectLink('one-player-game')
+    });
+  }
+
+  playTwoPlayersGame() {
+    this.setState({
+      redirect: this.createRedirectLink('two-players-game')
     });
   }
 
@@ -48,7 +55,7 @@ class App extends Component {
           <ImageButton
             url={urls.twoPlayersGame}
             className="App__type-game-button"
-            onClick={() =>{}} />
+            onClick={this.playTwoPlayersGame} />
         </div>
 
         {this.state.redirect}

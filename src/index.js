@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import OnePlayerGame from './components/one-player-game';
+import TwoPlayersGame from './components/two-players-game';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
@@ -18,6 +19,11 @@ ReactDOM.render((
         exact
         path="/one-player-game"
         component={OnePlayerGame}/>
+
+      <Route
+        exact
+        path="/two-players-game"
+        component={TwoPlayersGame}/>
     </Switch>
   </BrowserRouter>
   ), document.getElementById('root')

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import gameLogic from './services/game-logic';
 import HandChoicesSection from './components/hand-choices-section';
+import CompareHandsSection from './components/compare-hands-section';
 import {
   hands,
   language
@@ -14,7 +15,7 @@ class App extends Component {
     this.chosePaper = this.chosePaper.bind(this);
     this.choseScissors = this.choseScissors.bind(this);
     this.state = {
-      yourHand: null
+      playerHand: null
     }
   }
 
@@ -32,13 +33,13 @@ class App extends Component {
 
   setHandState(hand) {
     this.setState({
-      yourHand: hand
+      playerHand: hand
     });
   }
 
   render() {
     const cpuHand = gameLogic.choseCPUHand();
-    const result = gameLogic.gameResult(this.state.yourHand, cpuHand);
+    const result = gameLogic.gameResult(this.state.playerHand, cpuHand);
 
     return (
       <div className="App">
@@ -48,15 +49,9 @@ class App extends Component {
           onChosePaper={this.chosePaper}
           onChoseScissors={this.choseScissors} />
 
-        <section>
-          <div>
-            {language.yourChoice} {this.state.yourHand}
-          </div>
-
-          <div>
-            {language.cpuChoice} {cpuHand}
-          </div>
-        </section>
+        <CompareHandsSection
+          cpuHand={cpuHand}
+          playerHand={this.state.playerHand} />
 
         <section>
           <h2>

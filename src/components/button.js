@@ -5,14 +5,14 @@ const Button = (props) => (
   <button
     onClick={props.onClick}
     className={props.className}>
-    {props.text}
+    {props.children}
   </button>
 );
 
 export default Button;
 
 Button.propTypes = {
-  text: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string
 };

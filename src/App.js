@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import ImageButton from './components/image-button';
 import {
   language,
@@ -7,6 +8,27 @@ import {
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.playOnePlayerGame = this.playOnePlayerGame.bind(this);
+    this.state = {
+      redirect: null
+    }
+  }
+
+  createRedirectLink(to) {
+    return (
+      <Redirect
+        to={`/${to}`} />
+    );
+  }
+
+  playOnePlayerGame() {
+    this.setState({
+      redirect: this.createRedirectLink('one-player-game')
+    });
+  }
+
   render() {
     return (
       <div
@@ -21,7 +43,7 @@ class App extends Component {
           <ImageButton
             url={urls.onePlayerGame}
             className="App__type-game-button"
-            onClick={() =>{}} />
+            onClick={this.playOnePlayerGame} />
 
           <ImageButton
             url={urls.twoPlayersGame}
@@ -29,6 +51,7 @@ class App extends Component {
             onClick={() =>{}} />
         </div>
 
+        {this.state.redirect}
       </div>
     );
   }

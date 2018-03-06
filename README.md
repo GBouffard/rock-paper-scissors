@@ -10,10 +10,13 @@ Main functionalities:
 
 Technologies used
 ----
-- Javascript
+- JavaScript
 - React
 - React-Dom
-- HTML & CSS
+- React-router & React-router-dom
+- HTML
+- CSS
+- Flexbox
 
 How to run it
 ----
@@ -36,3 +39,4 @@ npm test
 What I learnt and what to improve
 ----
 Still to come
+React-router / Redirect. I already experimented with <Link /> but not with <Redirect /> which redirects when rendered.

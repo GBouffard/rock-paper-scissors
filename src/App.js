@@ -42,6 +42,15 @@ class App extends Component {
     const cpuHand = gameLogic.choseCPUHand();
     const results = gameLogic.gameResult(this.state.playerHand, cpuHand);
 
+    let compareHandsSectionElement
+    if (this.state.playerHand) {
+      compareHandsSectionElement = (
+        <CompareHandsSection
+          cpuHand={cpuHand}
+          playerHand={this.state.playerHand} />
+      );
+    }
+
     return (
       <div className="App">
 
@@ -50,12 +59,11 @@ class App extends Component {
           onChosePaper={this.chosePaper}
           onChoseScissors={this.choseScissors} />
 
-        <CompareHandsSection
-          cpuHand={cpuHand}
-          playerHand={this.state.playerHand} />
+        {compareHandsSectionElement}
 
         <GameResultsSection
           results={results} />
+
       </div>
     );
   }

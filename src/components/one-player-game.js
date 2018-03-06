@@ -3,6 +3,7 @@ import gameLogic from '../services/game-logic';
 import HandChoicesSection from '../components/hand-choices-section';
 import CompareHandsSection from '../components/compare-hands-section';
 import GameResultsSection from '../components/game-results-section';
+import HomePageButton from '../components/home-page-button';
 import {
   hands,
   language
@@ -68,6 +69,8 @@ export default class OnePlayerGame extends Component {
 
         {cpuHand && compareHandsSectionElement}
         {results && gameResultsSectionElement}
+
+        <HomePageButton />
       </div>
     );
   }

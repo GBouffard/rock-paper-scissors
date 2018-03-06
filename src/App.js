@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import gameLogic from './services/game-logic';
-import ImageButton from './components/image-button';
+import HandChoicesSection from './components/hand-choices-section';
 import {
   hands,
-  language,
-  urls
+  language
 } from './constants/game-constants';
 import './App.css';
 
@@ -44,23 +43,10 @@ class App extends Component {
     return (
       <div className="App">
 
-        <section>
-          <h2>
-            {language.handChoice}
-          </h2>
-
-          <ImageButton
-            url={urls.rockChoice}
-            onClick={this.choseRock} />
-
-          <ImageButton
-            url={urls.paperChoice}
-            onClick={this.chosePaper} />
-
-          <ImageButton
-            url={urls.scissorsChoice}
-            onClick={this.choseScissors} />
-        </section>
+        <HandChoicesSection
+          onChoseRock={this.choseRock}
+          onChosePaper={this.chosePaper}
+          onChoseScissors={this.choseScissors} />
 
         <section>
           <div>

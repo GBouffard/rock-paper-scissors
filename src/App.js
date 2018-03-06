@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import gameLogic from './services/game-logic';
+import ImageButton from './components/image-button';
 import './App.css';
-import Button from './components/button';
 
 class App extends Component {
   constructor() {
@@ -41,26 +41,28 @@ class App extends Component {
         <div>
           Choose a hand:
 
-          <Button
-            text="Rock"
+          <ImageButton
+            url="/images/hand_rock.jpg"
             onClick={this.choseRock} />
 
-          <Button
-            text="Paper"
+          <ImageButton
+            url="/images/hand_paper.jpg"
             onClick={this.chosePaper} />
 
-          <Button
-            text="Scissors"
+          <ImageButton
+            url="/images/hand_scissors.jpg"
             onClick={this.choseScissors} />
         </div>
 
-        <div>
-          You chose: {this.state.yourHand}
-        </div>
+        <section>
+          <div>
+            You chose: {this.state.yourHand}
+          </div>
 
-        <div>
-          The CPU chose: {cpuHand}
-        </div>
+          <div>
+            The CPU chose: {cpuHand}
+          </div>
+        </section>
 
         <div>
           Result: {result}

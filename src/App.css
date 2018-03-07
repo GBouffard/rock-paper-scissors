@@ -19,7 +19,7 @@
 .App__type-game-button {
   min-width: 200px;
   min-height: 200px;
-  background-color: darkorange;
+  background-color: orangered;
   border: 6px solid;
   border-radius: 20px;
   opacity: 0.7;
@@ -55,4 +55,14 @@
   -webkit-border-radius:48px;
   border: 3px solid black;
   cursor: pointer;
+}
+
+.home-page-button:hover {
+  background: orangered;
+  background: -moz-linear-gradient(top,orangered 0%,darkorange 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,orangered),color-stop(100%,darkorange));
+  background: -webkit-linear-gradient(top,orangered 0%,darkorange 100%);
+  background: -o-linear-gradient(top,orangered 0%,darkorange 100%);
+  background: -ms-linear-gradient(top,orangered 0%,darkorange 100%);
+  background: linear-gradient(top,orangered 0%,darkorange 100%);
 }

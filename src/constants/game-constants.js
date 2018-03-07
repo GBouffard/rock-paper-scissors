@@ -12,12 +12,10 @@ const beats = {
 
 const language = {
   gameType: 'Choose your game type:',
-  handChoice: 'CHOOSE YOUR DESTINY!',
-  playerOneHandChoice: 'PLAYER 1:',
-  playerTwoHandChoice: 'PLAYER 2:',
   onePlayerGame: {
     player1: 'You chose:',
     player2: 'The CPU chose:',
+    heading: 'CHOOSE YOUR DESTINY!',
     results: [
       'It\'s a Draw!',
       'You win!',
@@ -27,6 +25,8 @@ const language = {
   twoPlayersGame: {
     player1: 'Player 1 chose:',
     player2: 'Player 2 chose:',
+    player1Heading: 'PLAYER 1:',
+    player2Heading: 'PLAYER 2:',
     player1waiting: 'Waiting for Player 2',
     player2waiting: 'Waiting for Player 1',
     results: [

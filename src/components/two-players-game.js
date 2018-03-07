@@ -98,7 +98,7 @@ export default class TwoPlayersGame extends Component {
     const playerOneHandChoices = (
       <HandChoicesSection
         className="two-player"
-        heading={language.playerOneHandChoice}
+        heading={language.twoPlayersGame.player1Heading}
         onChoseRock={this.choseRockOne}
         onChosePaper={this.chosePaperOne}
         onChoseScissors={this.choseScissorsOne} />
@@ -117,7 +117,7 @@ export default class TwoPlayersGame extends Component {
     const playerTwoHandChoices = (
       <HandChoicesSection
         className="two-player"
-        heading={language.playerTwoHandChoice}
+        heading={language.twoPlayersGame.player2Heading}
         onChoseRock={this.choseRockTwo}
         onChosePaper={this.chosePaperTwo}
         onChoseScissors={this.choseScissorsTwo} />

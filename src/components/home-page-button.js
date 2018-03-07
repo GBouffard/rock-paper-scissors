@@ -35,6 +35,7 @@ export default class HomePageButton extends Component {
     return (
       <Button
         children={buttonChild}
+        className="home-page-button"
         onClick={this.redirect} />
     );
   }

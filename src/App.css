@@ -31,3 +31,28 @@
   opacity: 0.85;
   border-color: black;
 }
+
+.home-page-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -95px;
+  background: #F56200;
+  background: -moz-linear-gradient(top,#F56200 0%,#FEBB49 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#F56200),color-stop(100%,#FEBB49));
+  background: -webkit-linear-gradient(top,#F56200 0%,#FEBB49 100%);
+  background: -o-linear-gradient(top,#F56200 0%,#FEBB49 100%);
+  background: -ms-linear-gradient(top,#F56200 0%,#FEBB49 100%);
+  background: linear-gradient(top,#F56200 0%,#FEBB49 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#F56200',endColorstr='#FEBB49',GradientType=0);
+  padding:8px 18px;
+  color:#623F1D;
+  font-family:'Helvetica Neue',sans-serif;
+  font-size:16px;
+  font-weight: bold;
+  border-radius:48px;
+  -moz-border-radius:48px;
+  -webkit-border-radius:48px;
+  border: 3px solid black;
+  cursor: pointer;
+}

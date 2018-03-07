@@ -7,6 +7,7 @@ import {
 import '../App.css';
 
 export default function CompareHandsSection(props) {
+  const gameLanguage = props.twoPlayersGame ? language.twoPlayersGame : language.onePlayerGame;
   const playerOneImage = imageKeywords.playerOne[props.resultsIndex];
   const playerTwoImage = imageKeywords.playerTwo[props.resultsIndex];
 
@@ -16,7 +17,7 @@ export default function CompareHandsSection(props) {
       <div
         className="App__compare-hands-hand">
         <h3>
-          {language.onePlayerGame.player1}
+          {gameLanguage.player1}
         </h3>
         <img
           alt=""
@@ -26,7 +27,7 @@ export default function CompareHandsSection(props) {
       <div
         className="App__compare-hands-hand">
         <h3>
-          {language.onePlayerGame.player2}
+          {gameLanguage.player2}
         </h3>
         <img
           alt=""
@@ -37,6 +38,7 @@ export default function CompareHandsSection(props) {
 }
 
 CompareHandsSection.propTypes = {
+  twoPlayersGame: PropTypes.bool,
   playerOneHand: PropTypes.string,
   playerTwoHand: PropTypes.string,
   resultsIndex: PropTypes.number

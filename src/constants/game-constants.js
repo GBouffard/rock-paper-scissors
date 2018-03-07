@@ -22,6 +22,15 @@ const language = {
       'The CPU wins!'
     ]
   },
+  twoPlayersGame: {
+    player1: 'Player 1 chose:',
+    player2: 'Player 2 chose:',
+    results: [
+      'It\'s a Draw!',
+      'Player 1 wins!',
+      'Player 2 wins!'
+    ]
+  },
   backToHomePage: 'Back to home page'
 };
 

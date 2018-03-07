@@ -5,10 +5,12 @@ import {
   language,
   urls
 } from '../constants/game-constants';
+import '../App.css';
 
 export default function HandChoicesSection(props) {
   return (
-    <section>
+    <section
+      className="App__chose-hands">
       <h2>
         {language.handChoice}
       </h2>

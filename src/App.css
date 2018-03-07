@@ -67,7 +67,14 @@
   background: linear-gradient(top,orangered 0%,darkorange 100%);
 }
 
+.App__chose-hands {
+  position: relative;
+  top: 12%;
+}
+
 .App__compare-hands {
+  position: relative;
+  top: 14%;
   display: flex;
   justify-content: space-around;
   margin: 0 10%;
@@ -79,6 +86,7 @@
   background: firebrick;
   border: 3px solid black;
   padding-bottom: 10px;
+  height: 100%;
   background: -moz-linear-gradient(top,firebrick 0%,darkorange 100%);
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,firebrick),color-stop(100%,darkorange));
   background: -webkit-linear-gradient(top,firebrick 0%,darkorange 100%);

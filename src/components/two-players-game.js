@@ -103,7 +103,26 @@ export default class TwoPlayersGame extends Component {
     )
 
     const onlyPlayerOneChose = this.state.playerOneHand && !this.state.playerTwoHand;
-    let playerOneChoice = onlyPlayerOneChose ? waitingForPlayerTwo : playerOneHandChoices;
+    const playerOneChoice = onlyPlayerOneChose ? waitingForPlayerTwo : playerOneHandChoices;
+
+    const playerTwoHandChoices = (
+      <HandChoicesSection
+        className="two-player"
+        heading={language.playerTwoHandChoice}
+        onChoseRock={this.choseRockTwo}
+        onChosePaper={this.chosePaperTwo}
+        onChoseScissors={this.choseScissorsTwo} />
+    );
+
+    const waitingForPlayerOne = (
+      <div
+        className="chosen-hand">
+        {language.twoPlayersGame.player2waiting}
+      </div>
+    )
+
+    const onlyPlayerTwoChose = this.state.playerTwoHand && !this.state.playerOneHand;
+    const playerTwoChoice = onlyPlayerTwoChose ? waitingForPlayerOne : playerTwoHandChoices;
 
     return (
       <div className="App">
@@ -112,13 +131,7 @@ export default class TwoPlayersGame extends Component {
           className="App__two-players-hand-choices-section">
           
           {playerOneChoice}
-
-          <HandChoicesSection
-            className="two-player"
-            heading={language.playerTwoHandChoice}
-            onChoseRock={this.choseRockTwo}
-            onChosePaper={this.chosePaperTwo}
-            onChoseScissors={this.choseScissorsTwo} />
+          {playerTwoChoice}
         </section>
 
         {bothHandsChosen && compareHandsSectionElement}

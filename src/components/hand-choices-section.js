@@ -20,14 +20,17 @@ export default function HandChoicesSection(props) {
       <div
         className={`App__${props.className}-chose-hands-choices`}>
         <ImageButton
+          className="image-button"
           url={urls.rockChoice}
           onClick={props.onChoseRock} />
 
         <ImageButton
+          className="image-button"
           url={urls.paperChoice}
           onClick={props.onChosePaper} />
 
         <ImageButton
+          className="image-button"
           url={urls.scissorsChoice}
           onClick={props.onChoseScissors} />
       </div>

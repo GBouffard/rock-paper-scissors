@@ -89,15 +89,22 @@ export default class TwoPlayersGame extends Component {
     return (
       <div className="App">
 
-        <HandChoicesSection
-          onChoseRock={this.choseRockOne}
-          onChosePaper={this.chosePaperOne}
-          onChoseScissors={this.choseScissorsOne} />
+        <section
+          className="App__two-players-hand-choices-section">
+          <HandChoicesSection
+            className="two-player"
+            heading={language.playerOneHandChoice}
+            onChoseRock={this.choseRockOne}
+            onChosePaper={this.chosePaperOne}
+            onChoseScissors={this.choseScissorsOne} />
 
-        <HandChoicesSection
-          onChoseRock={this.choseRockTwo}
-          onChosePaper={this.chosePaperTwo}
-          onChoseScissors={this.choseScissorsTwo} />
+          <HandChoicesSection
+            className="two-player"
+            heading={language.playerTwoHandChoice}
+            onChoseRock={this.choseRockTwo}
+            onChosePaper={this.chosePaperTwo}
+            onChoseScissors={this.choseScissorsTwo} />
+        </section>
 
         {bothHandsChosen && compareHandsSectionElement}
         {bothHandsChosen && gameResultsSectionElement}

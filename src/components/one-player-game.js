@@ -57,7 +57,8 @@ export default class OnePlayerGame extends Component {
     );
 
     const gameResultsSectionElement = (
-      <section>
+      <section
+        className="App__results">
         {results}
       </section>
     );

@@ -94,3 +94,13 @@
   background: -ms-linear-gradient(top,firebrick 0%,darkorange 100%);
   background: linear-gradient(top,firebrick 0%,darkorange 100%);
 }
+
+.App__results {
+  position: relative;
+  top: 14%;
+  color: wheat;
+  font-size: 32px;
+  font-family: fantasy;
+  font-weight: bold;
+  text-shadow: 4px 4px 4px black;
+}

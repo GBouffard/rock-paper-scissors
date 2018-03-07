@@ -5,8 +5,7 @@ import CompareHandsSection from '../components/compare-hands-section';
 import GameResultsSection from '../components/game-results-section';
 import HomePageButton from '../components/home-page-button';
 import {
-  hands,
-  language
+  hands
 } from '../constants/game-constants';
 import '../App.css';
 

@@ -4,7 +4,9 @@ import Button from './button';
 
 const ImageButton = (props) => {
   const imageElement = (
-    <img src={props.url}/>
+    <img
+      alt=""
+      src={props.url}/>
   );
 
   return (

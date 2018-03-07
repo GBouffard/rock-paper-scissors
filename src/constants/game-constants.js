@@ -2,7 +2,13 @@ const hands = {
   rock: 'Rock',
   paper: 'Paper',
   scissors: 'Scissors'
-}
+};
+
+const beats = {
+  Rock: 'Scissors',
+  Scissors: 'Paper',
+  Paper: 'Rock'
+};
 
 const language = {
   gameType: 'Choose your game type:',
@@ -28,5 +34,6 @@ const urls = {
 export {
   hands,
   language,
-  urls
+  urls,
+  beats
 };

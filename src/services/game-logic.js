@@ -1,14 +1,14 @@
 import _ from 'lodash';
+import {
+  hands,
+  beats
+} from '../constants/game-constants';
 
-const beats = {
-  Rock: 'Scissors',
-  Scissors: 'Paper',
-  Paper: 'Rock'
-}
+const possibleHands = Object.values(hands);
 
 const gameLogic = {
   choseCPUHand() {
-    return _.sample(['Rock', 'Paper', 'Scissors']); 
+    return _.sample(possibleHands);
   },
 
   gameResult(firstHand, secondHand) {

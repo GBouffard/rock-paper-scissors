@@ -6,8 +6,8 @@ import {
 import '../App.css';
 
 export default function CompareHandsSection(props) {
-  const playerImage = props.results === 'You win!' ? 'win' : 'lose';
-  const cpuImage = props.results === 'The CPU wins!' ? 'win' : 'lose';
+  const playerImage = props.resultsIndex === 1 ? 'win' : 'lose';
+  const cpuImage = props.resultsIndex === 2 ? 'win' : 'lose';
 
   return (
     <section
@@ -39,5 +39,5 @@ export default function CompareHandsSection(props) {
 CompareHandsSection.propTypes = {
   playerHand: PropTypes.string,
   cpuHand: PropTypes.string,
-  results: PropTypes.string
+  resultsIndex: PropTypes.number
 };

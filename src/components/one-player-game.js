@@ -41,18 +41,19 @@ export default class OnePlayerGame extends Component {
 
   render() {
     let cpuHand;
+    let resultsIndex;
     let results;
 
     if (this.state.playerHand) {
       cpuHand = gameLogic.choseCPUHand();
-      const resultsIndex = gameLogic.gameResult(this.state.playerHand, cpuHand);
+      resultsIndex = gameLogic.gameResult(this.state.playerHand, cpuHand);
       results = language.onePlayerResults[resultsIndex];
     }
 
     const compareHandsSectionElement = (
       <CompareHandsSection
         cpuHand={cpuHand}
-        results={results}
+        resultsIndex={resultsIndex}
         playerHand={this.state.playerHand} />
     );
 

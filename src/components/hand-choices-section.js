@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ImageButton from './image-button';
 import {
-  language,
   urls
 } from '../constants/game-constants';
 import '../App.css';

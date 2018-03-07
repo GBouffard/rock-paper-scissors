@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import gameLogic from '../services/game-logic';
 import HandChoicesSection from '../components/hand-choices-section';
 import CompareHandsSection from '../components/compare-hands-section';
+import Button from '../components/button';
 import HomePageButton from '../components/home-page-button';
 import {
   hands,
@@ -18,10 +19,18 @@ export default class TwoPlayersGame extends Component {
     this.choseRockTwo = this.choseRockTwo.bind(this);
     this.chosePaperTwo = this.chosePaperTwo.bind(this);
     this.choseScissorsTwo = this.choseScissorsTwo.bind(this);
+    this.newGame = this.newGame.bind(this);
     this.state = {
       playerOneHand: null,
       playerTwoHand: null
     }
+  }
+
+  newGame() {
+    this.setState({
+      playerOneHand: null,
+      playerTwoHand: null
+    });
   }
 
   choseRockOne() {
@@ -136,6 +145,11 @@ export default class TwoPlayersGame extends Component {
 
         {bothHandsChosen && compareHandsSectionElement}
         {bothHandsChosen && gameResultsSectionElement}
+
+        <Button
+          className="new-game-button"
+          children="New Game" 
+          onClick={this.newGame}/>
 
         <HomePageButton />
       </div>

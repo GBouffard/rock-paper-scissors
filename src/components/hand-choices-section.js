@@ -11,21 +11,25 @@ export default function HandChoicesSection(props) {
   return (
     <section
       className="App__chose-hands">
-      <h2>
+      <div
+        className="App__chose-hands-title">
         {language.handChoice}
-      </h2>
+      </div>
 
-      <ImageButton
-        url={urls.rockChoice}
-        onClick={props.onChoseRock} />
+      <div
+        className="App__chose-hands-choices">
+        <ImageButton
+          url={urls.rockChoice}
+          onClick={props.onChoseRock} />
 
-      <ImageButton
-        url={urls.paperChoice}
-        onClick={props.onChosePaper} />
+        <ImageButton
+          url={urls.paperChoice}
+          onClick={props.onChosePaper} />
 
-      <ImageButton
-        url={urls.scissorsChoice}
-        onClick={props.onChoseScissors} />
+        <ImageButton
+          url={urls.scissorsChoice}
+          onClick={props.onChoseScissors} />
+      </div>
     </section>
   );
 }

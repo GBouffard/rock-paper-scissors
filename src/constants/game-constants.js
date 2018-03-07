@@ -12,7 +12,7 @@ const beats = {
 
 const language = {
   gameType: 'Choose your game type:',
-  handChoice: 'Choose your destiny:',
+  handChoice: 'CHOOSE YOUR DESTINY!',
   onePlayerGame: {
     player1: 'You chose:',
     player2: 'The CPU chose:',

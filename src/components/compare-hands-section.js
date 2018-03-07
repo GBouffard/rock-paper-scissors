@@ -3,18 +3,22 @@ import PropTypes from 'prop-types';
 import {
   language
 } from '../constants/game-constants';
+import '../App.css';
 
 export default function CompareHandsSection(props) {
   return (
-    <section>
-      <div>
+    <section
+        className="App__compare-hands">
+      <div
+        className="App__compare-hands-hand">
         <h3>
           {language.yourChoice}
         </h3>
         {props.playerHand}
       </div>
 
-      <div>
+      <div
+        className="App__compare-hands-hand">
         <h3>
           {language.cpuChoice}
         </h3>

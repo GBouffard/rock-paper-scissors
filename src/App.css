@@ -66,3 +66,23 @@
   background: -ms-linear-gradient(top,orangered 0%,darkorange 100%);
   background: linear-gradient(top,orangered 0%,darkorange 100%);
 }
+
+.App__compare-hands {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 10%;
+}
+
+.App__compare-hands-hand {
+  width: 100%;
+  margin: 10px;
+  background: firebrick;
+  border: 3px solid black;
+  padding-bottom: 10px;
+  background: -moz-linear-gradient(top,firebrick 0%,darkorange 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,firebrick),color-stop(100%,darkorange));
+  background: -webkit-linear-gradient(top,firebrick 0%,darkorange 100%);
+  background: -o-linear-gradient(top,firebrick 0%,darkorange 100%);
+  background: -ms-linear-gradient(top,firebrick 0%,darkorange 100%);
+  background: linear-gradient(top,firebrick 0%,darkorange 100%);
+}

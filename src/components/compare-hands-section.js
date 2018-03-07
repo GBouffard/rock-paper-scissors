@@ -6,8 +6,12 @@ import {
 import '../App.css';
 
 export default function CompareHandsSection(props) {
-  const playerImage = props.resultsIndex === 1 ? 'win' : 'lose';
-  const cpuImage = props.resultsIndex === 2 ? 'win' : 'lose';
+  let playerImage = props.resultsIndex === 1 ? 'win' : 'lose';
+  let cpuImage = props.resultsIndex === 2 ? 'win' : 'lose';
+  if (props.resultsIndex === 0) {
+    playerImage = 'draw';
+    cpuImage = 'draw';
+  }
 
   return (
     <section

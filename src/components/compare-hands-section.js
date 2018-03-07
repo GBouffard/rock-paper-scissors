@@ -16,28 +16,28 @@ export default function CompareHandsSection(props) {
       <div
         className="App__compare-hands-hand">
         <h3>
-          {language.yourChoice}
+          {language.onePlayerGame.player1}
         </h3>
         <img
           alt=""
-          src={`/images/${playerOneImage}_${props.playerHand}.jpg`}/>
+          src={`/images/${playerOneImage}_${props.playerOneHand}.jpg`}/>
       </div>
 
       <div
         className="App__compare-hands-hand">
         <h3>
-          {language.cpuChoice}
+          {language.onePlayerGame.player2}
         </h3>
         <img
           alt=""
-          src={`/images/${playerTwoImage}_${props.cpuHand}.jpg`}/> 
+          src={`/images/${playerTwoImage}_${props.playerTwoHand}.jpg`}/> 
       </div>
     </section>
   );
 }
 
 CompareHandsSection.propTypes = {
-  playerHand: PropTypes.string,
-  cpuHand: PropTypes.string,
+  playerOneHand: PropTypes.string,
+  playerTwoHand: PropTypes.string,
   resultsIndex: PropTypes.number
 };

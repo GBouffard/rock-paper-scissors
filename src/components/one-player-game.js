@@ -16,7 +16,7 @@ export default class OnePlayerGame extends Component {
     this.chosePaper = this.chosePaper.bind(this);
     this.choseScissors = this.choseScissors.bind(this);
     this.state = {
-      playerHand: null
+      playerOneHand: null
     }
   }
 
@@ -34,26 +34,26 @@ export default class OnePlayerGame extends Component {
 
   setHandState(hand) {
     this.setState({
-      playerHand: hand
+      playerOneHand: hand
     });
   }
 
   render() {
-    let cpuHand;
+    let playerTwoHand;
     let resultsIndex;
     let results;
 
-    if (this.state.playerHand) {
-      cpuHand = gameLogic.choseCPUHand();
-      resultsIndex = gameLogic.gameResult(this.state.playerHand, cpuHand);
-      results = language.onePlayerResults[resultsIndex];
+    if (this.state.playerOneHand) {
+      playerTwoHand = gameLogic.choseCPUHand();
+      resultsIndex = gameLogic.gameResult(this.state.playerOneHand, playerTwoHand);
+      results = language.onePlayerGame.results[resultsIndex];
     }
 
     const compareHandsSectionElement = (
       <CompareHandsSection
-        cpuHand={cpuHand}
+        playerTwoHand={playerTwoHand}
         resultsIndex={resultsIndex}
-        playerHand={this.state.playerHand} />
+        playerOneHand={this.state.playerOneHand} />
     );
 
     const gameResultsSectionElement = (
@@ -71,7 +71,7 @@ export default class OnePlayerGame extends Component {
           onChosePaper={this.chosePaper}
           onChoseScissors={this.choseScissors} />
 
-        {cpuHand && compareHandsSectionElement}
+        {playerTwoHand && compareHandsSectionElement}
         {results && gameResultsSectionElement}
 
         <HomePageButton />

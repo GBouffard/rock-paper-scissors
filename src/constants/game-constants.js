@@ -13,13 +13,15 @@ const beats = {
 const language = {
   gameType: 'Choose your game type:',
   handChoice: 'Choose your destiny:',
-  yourChoice: 'You chose:',
-  cpuChoice: 'The CPU chose:',
-  onePlayerResults: [
-    'It\'s a Draw!',
-    'You win!',
-    'The CPU wins!'
-  ],
+  onePlayerGame: {
+    player1: 'You chose:',
+    player2: 'The CPU chose:',
+    results: [
+      'It\'s a Draw!',
+      'You win!',
+      'The CPU wins!'
+    ]
+  },
   backToHomePage: 'Back to home page'
 };
 

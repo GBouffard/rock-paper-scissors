@@ -27,6 +27,8 @@ const language = {
   twoPlayersGame: {
     player1: 'Player 1 chose:',
     player2: 'Player 2 chose:',
+    player1waiting: 'Waiting for Player 2',
+    player2waiting: 'Waiting for Player 1',
     results: [
       'It\'s a Draw!',
       'Player 1 wins!',

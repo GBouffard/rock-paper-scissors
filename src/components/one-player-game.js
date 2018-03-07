@@ -50,6 +50,7 @@ export default class OnePlayerGame extends Component {
     const compareHandsSectionElement = (
       <CompareHandsSection
         cpuHand={cpuHand}
+        results={results}
         playerHand={this.state.playerHand} />
     );
 

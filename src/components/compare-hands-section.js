@@ -6,6 +6,9 @@ import {
 import '../App.css';
 
 export default function CompareHandsSection(props) {
+  const playerImage = props.results === 'You win!' ? 'win' : 'lose';
+  const cpuImage = props.results === 'The CPU wins!' ? 'win' : 'lose';
+
   return (
     <section
         className="App__compare-hands">
@@ -14,7 +17,10 @@ export default function CompareHandsSection(props) {
         <h3>
           {language.yourChoice}
         </h3>
-        {props.playerHand}
+
+        <img
+          alt=""
+          src={`/images/${playerImage}_${props.playerHand}.jpg`}/>
       </div>
 
       <div
@@ -22,7 +28,9 @@ export default function CompareHandsSection(props) {
         <h3>
           {language.cpuChoice}
         </h3>
-        {props.cpuHand} 
+        <img
+          alt=""
+          src={`/images/${cpuImage}_${props.cpuHand}.jpg`}/> 
       </div>
     </section>
   );
@@ -30,5 +38,6 @@ export default function CompareHandsSection(props) {
 
 CompareHandsSection.propTypes = {
   playerHand: PropTypes.string,
-  cpuHand: PropTypes.string
+  cpuHand: PropTypes.string,
+  results: PropTypes.string
 };

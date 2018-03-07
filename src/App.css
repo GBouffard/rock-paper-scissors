@@ -67,19 +67,19 @@
   background: linear-gradient(top,orangered 0%,darkorange 100%);
 }
 
-.App__chose-hands {
+.App__one-player-chose-hands {
   position: relative;
   top: 12%;
 }
 
-.App__chose-hands-title {
+.App__one-player-chose-hands-title {
   margin: 25px 0 20px;
   font-size: 24px;
   font-family: monospace;
   text-shadow: 1px 1px 1px darkred
 }
 
-.App__chose-hands-choices {
+.App__one-player-chose-hands-choices {
   display: flex;
   justify-content: space-around;
 }

@@ -10,14 +10,15 @@ import '../App.css';
 export default function HandChoicesSection(props) {
   return (
     <section
-      className="App__chose-hands">
+      className={`App__${props.className}-chose-hands`}>
+
       <div
-        className="App__chose-hands-title">
-        {language.handChoice}
+        className={`App__${props.className}-chose-hands-title`}>
+        {props.heading}
       </div>
 
       <div
-        className="App__chose-hands-choices">
+        className={`App__${props.className}-chose-hands-choices`}>
         <ImageButton
           url={urls.rockChoice}
           onClick={props.onChoseRock} />
@@ -37,5 +38,7 @@ export default function HandChoicesSection(props) {
 HandChoicesSection.propTypes = {
   onChoseRock: PropTypes.func.isRequired,
   onChosePaper: PropTypes.func.isRequired,
-  onChoseScissors: PropTypes.func.isRequired
+  onChoseScissors: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  heading: PropTypes.string
 };

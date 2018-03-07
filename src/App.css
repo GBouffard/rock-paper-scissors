@@ -38,12 +38,12 @@
   left: 50%;
   margin-left: -95px;
   background: #F56200;
-  background: -moz-linear-gradient(top,#F56200 0%,#FEBB49 100%);
+  background: -moz-linear-gradient(#F56200 0%,#FEBB49 100%);
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#F56200),color-stop(100%,#FEBB49));
-  background: -webkit-linear-gradient(top,#F56200 0%,#FEBB49 100%);
-  background: -o-linear-gradient(top,#F56200 0%,#FEBB49 100%);
-  background: -ms-linear-gradient(top,#F56200 0%,#FEBB49 100%);
-  background: linear-gradient(top,#F56200 0%,#FEBB49 100%);
+  background: -webkit-linear-gradient(#F56200 0%,#FEBB49 100%);
+  background: -o-linear-gradient(#F56200 0%,#FEBB49 100%);
+  background: -ms-linear-gradient(#F56200 0%,#FEBB49 100%);
+  background: linear-gradient(#F56200 0%,#FEBB49 100%);
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#F56200',endColorstr='#FEBB49',GradientType=0);
   padding:8px 18px;
   color:#623F1D;
@@ -63,12 +63,12 @@
   left: 50%;
   margin-left: -62.5px;
   background: #F56200;
-  background: -moz-linear-gradient(top,#F56200 0%,#FEBB49 100%);
+  background: -moz-linear-gradient(#F56200 0%,#FEBB49 100%);
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#F56200),color-stop(100%,#FEBB49));
-  background: -webkit-linear-gradient(top,#F56200 0%,#FEBB49 100%);
-  background: -o-linear-gradient(top,#F56200 0%,#FEBB49 100%);
-  background: -ms-linear-gradient(top,#F56200 0%,#FEBB49 100%);
-  background: linear-gradient(top,#F56200 0%,#FEBB49 100%);
+  background: -webkit-linear-gradient(#F56200 0%,#FEBB49 100%);
+  background: -o-linear-gradient(#F56200 0%,#FEBB49 100%);
+  background: -ms-linear-gradient(#F56200 0%,#FEBB49 100%);
+  background: linear-gradient(#F56200 0%,#FEBB49 100%);
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#F56200',endColorstr='#FEBB49',GradientType=0);
   padding:8px 18px;
   color:#623F1D;
@@ -84,12 +84,12 @@
 
 .home-page-button:hover {
   background: orangered;
-  background: -moz-linear-gradient(top,orangered 0%,darkorange 100%);
+  background: -moz-linear-gradient(orangered 0%,darkorange 100%);
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,orangered),color-stop(100%,darkorange));
-  background: -webkit-linear-gradient(top,orangered 0%,darkorange 100%);
-  background: -o-linear-gradient(top,orangered 0%,darkorange 100%);
-  background: -ms-linear-gradient(top,orangered 0%,darkorange 100%);
-  background: linear-gradient(top,orangered 0%,darkorange 100%);
+  background: -webkit-linear-gradient(orangered 0%,darkorange 100%);
+  background: -o-linear-gradient(orangered 0%,darkorange 100%);
+  background: -ms-linear-gradient(orangered 0%,darkorange 100%);
+  background: linear-gradient(orangered 0%,darkorange 100%);
 }
 
 .App__one-player-chose-hands {
@@ -161,12 +161,12 @@
   border: 3px solid black;
   padding-bottom: 10px;
   height: 100%;
-  background: -moz-linear-gradient(top,firebrick 0%,darkorange 100%);
+  background: -moz-linear-gradient(firebrick 0%,darkorange 100%);
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,firebrick),color-stop(100%,darkorange));
-  background: -webkit-linear-gradient(top,firebrick 0%,darkorange 100%);
-  background: -o-linear-gradient(top,firebrick 0%,darkorange 100%);
-  background: -ms-linear-gradient(top,firebrick 0%,darkorange 100%);
-  background: linear-gradient(top,firebrick 0%,darkorange 100%);
+  background: -webkit-linear-gradient(firebrick 0%,darkorange 100%);
+  background: -o-linear-gradient(firebrick 0%,darkorange 100%);
+  background: -ms-linear-gradient(firebrick 0%,darkorange 100%);
+  background: linear-gradient(firebrick 0%,darkorange 100%);
 }
 
 .App__results {

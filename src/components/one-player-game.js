@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import gameLogic from '../services/game-logic';
 import HandChoicesSection from '../components/hand-choices-section';
 import CompareHandsSection from '../components/compare-hands-section';
-import GameResultsSection from '../components/game-results-section';
 import HomePageButton from '../components/home-page-button';
 import {
   hands,
@@ -58,8 +57,9 @@ export default class OnePlayerGame extends Component {
     );
 
     const gameResultsSectionElement = (
-      <GameResultsSection
-        results={results} />
+      <section>
+        {results}
+      </section>
     );
 
     return (

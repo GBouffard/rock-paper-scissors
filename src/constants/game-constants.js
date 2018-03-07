@@ -31,9 +31,15 @@ const urls = {
   scissorsChoice: '/images/hand_scissors.jpg'
 };
 
+const imageKeywords = {
+  playerOne: ['draw', 'win', 'lose'],
+  playerTwo: ['draw', 'lose', 'win']
+};
+
 export {
   hands,
   language,
   urls,
-  beats
+  beats,
+  imageKeywords
 };

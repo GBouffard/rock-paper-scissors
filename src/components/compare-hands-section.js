@@ -1,17 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  language
+  language,
+  imageKeywords
 } from '../constants/game-constants';
 import '../App.css';
 
 export default function CompareHandsSection(props) {
-  let playerImage = props.resultsIndex === 1 ? 'win' : 'lose';
-  let cpuImage = props.resultsIndex === 2 ? 'win' : 'lose';
-  if (props.resultsIndex === 0) {
-    playerImage = 'draw';
-    cpuImage = 'draw';
-  }
+  const playerOneImage = imageKeywords.playerOne[props.resultsIndex];
+  const playerTwoImage = imageKeywords.playerTwo[props.resultsIndex];
 
   return (
     <section
@@ -21,10 +18,9 @@ export default function CompareHandsSection(props) {
         <h3>
           {language.yourChoice}
         </h3>
-
         <img
           alt=""
-          src={`/images/${playerImage}_${props.playerHand}.jpg`}/>
+          src={`/images/${playerOneImage}_${props.playerHand}.jpg`}/>
       </div>
 
       <div
@@ -34,7 +30,7 @@ export default function CompareHandsSection(props) {
         </h3>
         <img
           alt=""
-          src={`/images/${cpuImage}_${props.cpuHand}.jpg`}/> 
+          src={`/images/${playerTwoImage}_${props.cpuHand}.jpg`}/> 
       </div>
     </section>
   );

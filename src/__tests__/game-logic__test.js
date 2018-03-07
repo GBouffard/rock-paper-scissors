@@ -10,16 +10,16 @@ describe('game logic', () => {
 
   it('knows when the result of a game is a draw', () => {
     expect(gameLogic.gameResult('Rock', 'Rock'))
-      .toEqual('It\'s a Draw!');
+      .toEqual(0);
   });
 
   it('knows when the player won the game', () => {
     expect(gameLogic.gameResult('Paper', 'Rock'))
-      .toEqual('You win!');
+      .toEqual(1);
   });
 
   it('knows when the player lost the game', () => {
     expect(gameLogic.gameResult('Rock', 'Paper'))
-      .toEqual('The CPU wins!');
+      .toEqual(2);
   });
 });

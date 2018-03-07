@@ -93,7 +93,8 @@
 }
 
 .App__compare-hands-hand {
-  width: 100%;
+  width: 30%;
+  min-width: 200px;
   margin: 10px;
   background: firebrick;
   border: 3px solid black;

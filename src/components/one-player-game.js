@@ -5,7 +5,8 @@ import CompareHandsSection from '../components/compare-hands-section';
 import GameResultsSection from '../components/game-results-section';
 import HomePageButton from '../components/home-page-button';
 import {
-  hands
+  hands,
+  language
 } from '../constants/game-constants';
 import '../App.css';
 
@@ -44,7 +45,8 @@ export default class OnePlayerGame extends Component {
 
     if (this.state.playerHand) {
       cpuHand = gameLogic.choseCPUHand();
-      results = gameLogic.gameResult(this.state.playerHand, cpuHand);
+      const resultsIndex = gameLogic.gameResult(this.state.playerHand, cpuHand);
+      results = language.onePlayerResults[resultsIndex];
     }
 
     const compareHandsSectionElement = (

@@ -21,8 +21,3 @@ const gameLogic = {
 };
 
 export default gameLogic;
-
-
-'It\'s a Draw!'
-'You win!'
-'The CPU wins!'

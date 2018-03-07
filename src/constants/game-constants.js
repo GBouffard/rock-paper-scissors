@@ -9,7 +9,11 @@ const language = {
   handChoice: 'Choose your destiny:',
   yourChoice: 'You chose:',
   cpuChoice: 'The CPU chose:',
-  results: 'Results:',
+  onePlayerResults: [
+    'It\'s a Draw!',
+    'You win!',
+    'The CPU wins!'
+  ],
   backToHomePage: 'Back to home page'
 };
 

@@ -89,7 +89,7 @@
   background: linear-gradient(orangered 0%,darkorange 100%);
 }
 
-.App__one-player-chose-hands {
+.App__chose-hands {
   position: relative;
   top: 12%;
 }
@@ -122,11 +122,6 @@
 .App__two-players-hand-choices-section {
   display: flex;
   justify-content: space-around;
-  position: relative;
-  top: 12%;
-}
-
-.App__two-player-chose-hands {
   position: relative;
   top: 12%;
 }

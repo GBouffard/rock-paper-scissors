@@ -10,7 +10,7 @@ import '../css/App.css';
 export default function HandChoicesSection(props) {
   return (
     <section
-      className={`App__${props.className}-chose-hands`}>
+      className={`App__chose-hands`}>
 
       <Heading
         className={`App__chose-hands-title`}

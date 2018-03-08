@@ -1,23 +1,27 @@
+button {
+  cursor: pointer;
+}
+
 .game-type-button {
   min-width: 200px;
   min-height: 200px;
+  margin: 0 50px;
   background-color: orangered;
   border: 6px solid;
   border-radius: 20px;
   opacity: 0.7;
-  margin: 0 50px;
-  cursor: pointer;
 }
 
 .game-type-button:hover {
-  opacity: 0.85;
   border-color: black;
+  opacity: 0.85;
 }
 
 .new-game-button {
-  height: 200px;
   width: 200px;
+  height: 200px;
   margin: 100px auto 10px;
+  padding:8px 18px;
   background: #F56200;
   background: -moz-linear-gradient(#F56200 0%,#FEBB49 100%);
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#F56200),color-stop(100%,#FEBB49));
@@ -25,22 +29,21 @@
   background: -o-linear-gradient(#F56200 0%,#FEBB49 100%);
   background: -ms-linear-gradient(#F56200 0%,#FEBB49 100%);
   background: linear-gradient(#F56200 0%,#FEBB49 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#F56200',endColorstr='#FEBB49',GradientType=0);
-  padding:8px 18px;
-  font-family: monospace;
-  font-size: 36px;
-  font-weight: bold;
+  border: 3px solid black;
   border-radius: 100px;
   -moz-border-radius: 100px;
   -webkit-border-radius: 100px;
-  border: 3px solid black;
-  cursor: pointer;
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#F56200',endColorstr='#FEBB49',GradientType=0);
+  font-family: monospace;
+  font-size: 36px;
+  font-weight: bold;
 }
 
 .home-page-button {
   position: absolute;
-  bottom: 20px;
   right: 20px;
+  bottom: 20px;
+  padding:8px 18px;
   background: #F56200;
   background: -moz-linear-gradient(#F56200 0%,#FEBB49 100%);
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#F56200),color-stop(100%,#FEBB49));
@@ -48,17 +51,15 @@
   background: -o-linear-gradient(#F56200 0%,#FEBB49 100%);
   background: -ms-linear-gradient(#F56200 0%,#FEBB49 100%);
   background: linear-gradient(#F56200 0%,#FEBB49 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#F56200',endColorstr='#FEBB49',GradientType=0);
-  padding:8px 18px;
-  color:#623F1D;
-  font-family:'Helvetica Neue',sans-serif;
-  font-size:16px;
-  font-weight: bold;
+  border: 3px solid black;
   border-radius:48px;
   -moz-border-radius:48px;
   -webkit-border-radius:48px;
-  border: 3px solid black;
-  cursor: pointer;
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#F56200',endColorstr='#FEBB49',GradientType=0);
+  font-family:'Helvetica Neue',sans-serif;
+  font-size:16px;
+  font-weight: bold;
+  color:#623F1D;
 }
 
 .home-page-button:hover {
@@ -73,5 +74,4 @@
 
 .image-button {
   height: 145px;
-  cursor: pointer;
 }

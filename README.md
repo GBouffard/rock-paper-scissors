@@ -9,7 +9,7 @@ Main functionalities:
 - In the case of a 2 players game, results are only shown when both players made their choices.
 - A winner is declared at the end of each match-up.
 
-Technologies used
+Technologies used:
 ----
 - JavaScript
 - ES6 syntax
@@ -25,7 +25,18 @@ Technologies used
 - Flexbox
 - Jest
 
-How to run it
+Desktop preview:
+----
+
+![](public/images/Screenshot1.png)
+
+![](public/images/Screenshot2.png)
+
+![](public/images/Screenshot3.png)
+
+![](public/images/Screenshot4.png)
+
+How to run it:
 ----
 ```
 git clone git@github.com:GBouffard/rock-paper-scissors.git
@@ -35,19 +46,19 @@ cd rock-paper-scissors
 PS: the script will ask to chose options regarding running Jest tests; Press a to run all tests, then q to quit the test suite.
 
 
-Methodology
+Methodology:
 ----
 - I first scaffolded the app through react-create-app.
 - I started with unit logic tests and based the game logic on how it is supposed to work.
 - I then started with a 1 player game; and further down the line moved to a 2 players game.
 - The React code is gearing towards re-usability but due to the time constraint, can be improved.
 
-What I learnt
+What I learnt:
 ----
 - I used the React-router Redirect command for the first time.
 - I wrote a shell script for the first time.
 
-What to improve
+What to improve:
 ----
 - The logic of the game is unit tested however for some reasons the enzyme, react-test-renderer and Chai set-up conflicted; answers found on StackOverflow and Github didn't resolve so after a while, instead of blocking I had to skip integration tests and delay that part of the debugging to later. I have investigated other testing frameworks to use for functional tests but didn't have the time to try them yet.
 - The whole CSS and Flexbox integration can be improved.

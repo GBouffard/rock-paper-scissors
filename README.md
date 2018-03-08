@@ -11,32 +11,37 @@ Main functionalities:
 Technologies used
 ----
 - JavaScript
+- ES6 syntax
+- create-react-app
 - React
 - React-Dom
 - React-router & React-router-dom
+- PropTypes
 - HTML
 - CSS
 - Flexbox
+- Jest
 
 How to run it
 ----
 ```
 git clone git@github.com:GBouffard/rock-paper-scissors.git
 cd rock-paper-scissors
-npm install
-npm start
+./build.sh
 ```
-By opening your browser on http://localhost:3000, you can now you can play with the game.
+PS: the script will ask for chosen options; Press a to run all tests, then q to quit the test suite.
 
-
-How to run tests
-----
-```
-cd rock-paper-scissors
-npm test
-```
 
 What I learnt and what to improve
 ----
-Still to come
-React-router / Redirect. I already experimented with <Link /> but not with <Redirect /> which redirects when rendered.
+- I first scaffolded the app through react-create-app and then added the logic with unit tests.
+- I first started with a 1 player game.
+- I used the React-router Redirect command for the first time.
+- the enclosed shell script as simple as it seems is the first shell script that I ever wrote.
+- the logic of the game is unit tested however for some reasons enzyme, react-test-renderer and Chai conflicted; answers found on SO and Github didn't resolve so after a while, instead of blocking I had to skip integration tests and delay that part of the debugging to later. I have investigated other testing frameworks to use for functional tests but didn't have the time to try them yet.
+- the React code is gearing towards re-usability but due to the time constraint, can be improved.
+- the CSS was also rushed due to time constraints. It will be improved as I keep this project open for now.
+- sass or less compiling could also be added, with better BEM terminology.
+- the views are made for desktop clients only at this point; responsive design still needs to be done.
+- A continuous integration tool could also be added
+- This project is still open and I will keep improving it as I find the time to.

@@ -67,7 +67,6 @@ export default class OnePlayerGame extends Component {
       <div className="App">
 
         <HandChoicesSection
-          className="one-player"
           heading={language.onePlayerGame.heading}
           onChoseRock={this.choseRock}
           onChosePaper={this.chosePaper}

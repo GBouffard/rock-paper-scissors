@@ -11,6 +11,8 @@ import '../../css/hand-choices-section.css';
 const mainClass = 'hand-choices-section';
 
 export default function HandChoicesSection(props) {
+  const gameType = props.isTwoPlayersGame ? 'two-players' : 'one-player';
+
   return (
     <section
       className={mainClass}>
@@ -20,7 +22,7 @@ export default function HandChoicesSection(props) {
         children={props.heading} />
 
       <div
-        className={`${mainClass}__choices ${mainClass}__choices--${props.className}`}>
+        className={`${mainClass}__choices ${mainClass}__choices--${gameType}`}>
         <ImageButton
           className="image-button"
           url={urls.rockChoice}
@@ -40,10 +42,14 @@ export default function HandChoicesSection(props) {
   );
 }
 
+HandChoicesSection.defaultProps = {
+  isTwoPlayersGame: false
+};
+
 HandChoicesSection.propTypes = {
   onChoseRock: PropTypes.func.isRequired,
   onChosePaper: PropTypes.func.isRequired,
   onChoseScissors: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  heading: PropTypes.string
+  heading: PropTypes.string,
+  isTwoPlayersGame: PropTypes.bool,
 };

@@ -7,6 +7,7 @@ import {
   urls
 } from './constants/game-constants';
 import './css/App.css';
+import './css/buttons.css';
 
 class App extends Component {
   constructor() {
@@ -49,12 +50,12 @@ class App extends Component {
         <div>
           <ImageButton
             url={urls.onePlayerGame}
-            className="App__type-game-button"
+            className="game-type-button"
             onClick={this.playOnePlayerGame} />
 
           <ImageButton
             url={urls.twoPlayersGame}
-            className="App__type-game-button"
+            className="game-type-button"
             onClick={this.playTwoPlayersGame} />
         </div>
 

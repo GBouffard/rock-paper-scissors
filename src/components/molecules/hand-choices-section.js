@@ -5,7 +5,7 @@ import Heading from '../atoms/heading';
 import {
   urls
 } from '../../constants/game-constants';
-import '../../css/App.css';
+import '../../css/buttons.css';
 import '../../css/hand-choices-section.css';
 
 const mainClass = 'hand-choices-section';

@@ -10,6 +10,7 @@ import {
   language
 } from '../../constants/game-constants';
 import '../../css/App.css';
+import '../../css/buttons.css';
 
 export default class TwoPlayersGame extends Component {
   constructor() {

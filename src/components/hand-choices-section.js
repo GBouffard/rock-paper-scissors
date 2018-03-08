@@ -12,7 +12,7 @@ export default function HandChoicesSection(props) {
       className={`App__${props.className}-chose-hands`}>
 
       <div
-        className={`App__${props.className}-chose-hands-title`}>
+        className={`App__chose-hands-title`}>
         {props.heading}
       </div>
 

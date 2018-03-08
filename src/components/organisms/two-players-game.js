@@ -93,6 +93,7 @@ export default class TwoPlayersGame extends Component {
 
     const gameResultsElement = (
       <GameResults
+        className="static"
         children={results} />
     );
 

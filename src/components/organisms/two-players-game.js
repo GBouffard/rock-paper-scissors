@@ -97,39 +97,29 @@ export default class TwoPlayersGame extends Component {
       </section>
     );
 
-    const playerOneHandChoices = (
-      <HandChoicesSection
-        isTwoPlayersGame={true}
-        heading={language.twoPlayersGame.player1Heading}
-        onChoseRock={this.choseRockOne}
-        onChosePaper={this.chosePaperOne}
-        onChoseScissors={this.choseScissorsOne} />
-    );
+    const makePlayerChoice = (heading, choseRock, chosePaper, choseScissors, waiting, whoChose) => {
+      const playerHandChoices = (
+        <HandChoicesSection
+          isTwoPlayersGame={true}
+          heading={heading}
+          onChoseRock={choseRock}
+          onChosePaper={chosePaper}
+          onChoseScissors={choseScissors} />
+      );
 
-    const waitingForPlayerTwo = (
-      <WaitingForPlayer
-        children={language.twoPlayersGame.player1waiting} />
-    );
+      const waitingForPlayer = (
+        <WaitingForPlayer
+          children={waiting} />
+      );
+
+      return whoChose ? waitingForPlayer : playerHandChoices;
+    };
 
     const onlyPlayerOneChose = this.state.playerOneHand && !this.state.playerTwoHand;
-    const playerOneChoice = onlyPlayerOneChose ? waitingForPlayerTwo : playerOneHandChoices;
-
-    const playerTwoHandChoices = (
-      <HandChoicesSection
-        isTwoPlayersGame={true}
-        heading={language.twoPlayersGame.player2Heading}
-        onChoseRock={this.choseRockTwo}
-        onChosePaper={this.chosePaperTwo}
-        onChoseScissors={this.choseScissorsTwo} />
-    );
-
-    const waitingForPlayerOne = (
-      <WaitingForPlayer
-        children={language.twoPlayersGame.player2waiting} />
-    );
+    const playerOneChoice = makePlayerChoice(language.twoPlayersGame.player1Heading, this.choseRockOne, this.chosePaperOne, this.choseScissorsOne, language.twoPlayersGame.player1waiting, onlyPlayerOneChose);
 
     const onlyPlayerTwoChose = this.state.playerTwoHand && !this.state.playerOneHand;
-    const playerTwoChoice = onlyPlayerTwoChose ? waitingForPlayerOne : playerTwoHandChoices;
+    const playerTwoChoice = makePlayerChoice(language.twoPlayersGame.player2Heading, this.choseRockTwo, this.chosePaperTwo, this.choseScissorsTwo, language.twoPlayersGame.player2waiting, onlyPlayerTwoChose);
 
     const newGameButton = (
       <NewGameButton

@@ -42,10 +42,6 @@ export default function HandChoicesSection(props) {
   );
 }
 
-HandChoicesSection.defaultProps = {
-  isTwoPlayersGame: false
-};
-
 HandChoicesSection.propTypes = {
   onChoseRock: PropTypes.func.isRequired,
   onChosePaper: PropTypes.func.isRequired,

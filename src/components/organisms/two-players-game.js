@@ -84,7 +84,7 @@ export default class TwoPlayersGame extends Component {
 
     const compareHandsSectionElement = (
       <CompareHandsSection
-        twoPlayersGame={true}
+        isTwoPlayersGame={true}
         playerOneHand={this.state.playerOneHand}
         playerTwoHand={this.state.playerTwoHand}
         resultsIndex={resultsIndex} />

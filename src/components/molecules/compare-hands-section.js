@@ -10,7 +10,7 @@ import '../../css/compare-hands-section.css';
 const mainClass = 'compare-hands-section';
 
 export default function CompareHandsSection(props) {
-  const gameLanguage = props.twoPlayersGame ? language.twoPlayersGame : language.onePlayerGame;
+  const gameLanguage = language[props.isTwoPlayersGame ? 'twoPlayersGame' : 'onePlayerGame'];
   const playerOneImage = imageKeywords.playerOne[props.resultsIndex];
   const playerTwoImage = imageKeywords.playerTwo[props.resultsIndex];
 
@@ -43,7 +43,7 @@ export default function CompareHandsSection(props) {
 }
 
 CompareHandsSection.propTypes = {
-  twoPlayersGame: PropTypes.bool,
+  isTwoPlayersGame: PropTypes.bool,
   playerOneHand: PropTypes.string,
   playerTwoHand: PropTypes.string,
   resultsIndex: PropTypes.number

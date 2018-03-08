@@ -133,24 +133,28 @@ export default class TwoPlayersGame extends Component {
     const onlyPlayerTwoChose = this.state.playerTwoHand && !this.state.playerOneHand;
     const playerTwoChoice = onlyPlayerTwoChose ? waitingForPlayerOne : playerTwoHandChoices;
 
+    const newGameButton = (
+      <Button
+        className="new-game-button"
+        children={language.newGame}
+        onClick={this.newGame}/>
+    );
+
+    const playersChoices = (
+      <section
+        className="App__two-players-hand-choices-section">
+        {playerOneChoice}
+        {playerTwoChoice}
+      </section>
+    );
+
+    const playSection = bothHandsChosen ? newGameButton : playersChoices;
+
     return (
       <div className="App">
-
-        <section
-          className="App__two-players-hand-choices-section">
-          
-          {playerOneChoice}
-          {playerTwoChoice}
-        </section>
-
+        {playSection}
         {bothHandsChosen && compareHandsSectionElement}
         {bothHandsChosen && gameResultsSectionElement}
-
-        <Button
-          className="new-game-button"
-          children="New Game" 
-          onClick={this.newGame}/>
-
         <HomePageButton />
       </div>
     );

@@ -35,6 +35,7 @@ const language = {
       'Player 2 wins!'
     ]
   },
+  newGame: 'NEW GAME',
   backToHomePage: 'Back to home page'
 };
 

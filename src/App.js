@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import ImageButton from './components/image-button';
+import Heading from './components/heading';
 import {
   language,
   urls
@@ -41,10 +42,9 @@ class App extends Component {
       <div
         className="App">
 
-        <h1
-          className="App__intro-heading">
-          {language.gameType}
-        </h1>
+        <Heading
+          className="App__intro-heading"
+          children={language.gameType} />
 
         <div>
           <ImageButton

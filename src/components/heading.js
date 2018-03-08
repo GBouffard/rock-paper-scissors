@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 
 const tagOptions = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
-export default function Heading({ tag, children }) {
+export default function Heading({ tag, children, className }) {
   const Tag = tag;
 
   let headingElement;
   if (tagOptions.includes(tag)) {
     headingElement = (
-      <Tag>
+      <Tag
+        className={className} >
         {children}
       </Tag>
     );
@@ -23,5 +24,6 @@ Heading.defaultProps = {
 
 Heading.propTypes = {
   tag: PropTypes.oneOf(tagOptions),
-  children: PropTypes.node
+  children: PropTypes.node,
+  className: PropTypes.string
 };

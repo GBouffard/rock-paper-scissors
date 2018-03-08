@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ImageButton from './image-button';
-import Heading from './heading';
+import ImageButton from '../atoms/image-button';
+import Heading from '../atoms/heading';
 import {
   urls
-} from '../constants/game-constants';
-import '../css/App.css';
-import '../css/hand-choices-section.css';
+} from '../../constants/game-constants';
+import '../../css/App.css';
+import '../../css/hand-choices-section.css';
 
 const mainClass = 'hand-choices-section';
 

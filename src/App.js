@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import ImageButton from './components/image-button';
-import Heading from './components/heading';
+import ImageButton from './components/atoms/image-button';
+import Heading from './components/atoms/heading';
 import {
   language,
   urls

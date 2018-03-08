@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './css/index.css';
 import App from './App';
-import OnePlayerGame from './components/one-player-game';
-import TwoPlayersGame from './components/two-players-game';
+import OnePlayerGame from './components/organisms/one-player-game';
+import TwoPlayersGame from './components/organisms/two-players-game';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((

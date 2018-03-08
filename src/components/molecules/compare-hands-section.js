@@ -1,11 +1,11 @@
 import React from 'react';
-import Heading from './heading';
+import Heading from '../atoms/heading';
 import PropTypes from 'prop-types';
 import {
   language,
   imageKeywords
-} from '../constants/game-constants';
-import '../css/compare-hands-section.css';
+} from '../../constants/game-constants';
+import '../../css/compare-hands-section.css';
 
 const mainClass = 'compare-hands-section';
 

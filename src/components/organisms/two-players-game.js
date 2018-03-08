@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import gameLogic from '../services/game-logic';
-import HandChoicesSection from './hand-choices-section';
-import CompareHandsSection from './compare-hands-section';
-import Button from './button';
-import HomePageButton from './home-page-button';
-import WaitingForPlayer from './waiting-for-player';
+import gameLogic from '../../services/game-logic';
+import HandChoicesSection from '../molecules/hand-choices-section';
+import CompareHandsSection from '../molecules/compare-hands-section';
+import Button from '../atoms/button';
+import HomePageButton from '../atoms/home-page-button';
+import WaitingForPlayer from '../atoms/waiting-for-player';
 import {
   hands,
   language
-} from '../constants/game-constants';
-import '../css/App.css';
+} from '../../constants/game-constants';
+import '../../css/App.css';
 
 export default class TwoPlayersGame extends Component {
   constructor() {

@@ -17,7 +17,7 @@ export default function HandChoicesSection(props) {
       </div>
 
       <div
-        className={`App__${props.className}-chose-hands-choices`}>
+        className={`App__chose-hands-choices App__chose-hands-choices--${props.className}`}>
         <ImageButton
           className="image-button"
           url={urls.rockChoice}

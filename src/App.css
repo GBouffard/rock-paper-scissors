@@ -101,15 +101,22 @@
   text-shadow: 1px 1px 1px darkred
 }
 
-.App__one-player-chose-hands-choices {
+.App__chose-hands-choices {
   background-image: url("/images/danger.jpg");
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 780px;
   min-height: 200px;
   margin: 0 auto;
   border: 5px solid;
+}
+
+.App__chose-hands-choices--one-player {
+  max-width: 780px;
+}
+
+.App__chose-hands-choices--two-players {
+  max-width: 500px;
 }
 
 .App__two-players-hand-choices-section {
@@ -122,17 +129,6 @@
 .App__two-player-chose-hands {
   position: relative;
   top: 12%;
-}
-
-.App__two-player-chose-hands-choices {
-  background-image: url("/images/danger.jpg");
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  max-width: 500px;
-  min-height: 200px;
-  margin: 0 auto;
-  border: 5px solid;
 }
 
 .App__compare-hands {

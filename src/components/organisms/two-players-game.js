@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import gameLogic from '../../services/game-logic';
 import HandChoicesSection from '../molecules/hand-choices-section';
 import CompareHandsSection from '../molecules/compare-hands-section';
-import Button from '../atoms/button';
+import NewGameButton from '../atoms/new-game-button';
 import HomePageButton from '../atoms/home-page-button';
 import WaitingForPlayer from '../atoms/waiting-for-player';
 import {
@@ -132,10 +132,8 @@ export default class TwoPlayersGame extends Component {
     const playerTwoChoice = onlyPlayerTwoChose ? waitingForPlayerOne : playerTwoHandChoices;
 
     const newGameButton = (
-      <Button
-        className="new-game-button"
-        children={language.newGame}
-        onClick={this.newGame}/>
+      <NewGameButton
+        onClick={this.newGame} />
     );
 
     const playersChoices = (

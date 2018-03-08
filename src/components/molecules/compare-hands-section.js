@@ -11,33 +11,31 @@ const mainClass = 'compare-hands-section';
 
 export default function CompareHandsSection(props) {
   const gameLanguage = language[props.isTwoPlayersGame ? 'twoPlayersGame' : 'onePlayerGame'];
-  const playerOneImage = imageKeywords.playerOne[props.resultsIndex];
-  const playerTwoImage = imageKeywords.playerTwo[props.resultsIndex];
+  const resultOne = imageKeywords.playerOne[props.resultsIndex];
+  const resultTwo = imageKeywords.playerTwo[props.resultsIndex];
+
+  const chosenHandElement = (heading, result, choice) => {
+    return (
+      <div
+        className={`${mainClass}__hand`}>
+        <Heading
+          tag={'h3'}
+          children={heading} />
+        <img
+          alt=""
+          src={`/images/${result}_${choice}.jpg`}/>
+      </div>
+    );
+  }
+
+  const player1ChosenHand = chosenHandElement(gameLanguage.player1, resultOne, props.playerOneHand);
+  const player2ChosenHand = chosenHandElement(gameLanguage.player2, resultTwo, props.playerTwoHand);
 
   return (
     <section
-        className={mainClass}>
-
-      <div
-        className={`${mainClass}__hand`}>
-        <Heading
-          tag={'h3'}
-          children={gameLanguage.player1} />
-        <img
-          alt=""
-          src={`/images/${playerOneImage}_${props.playerOneHand}.jpg`}/>
-      </div>
-
-      <div
-        className={`${mainClass}__hand`}>
-        <Heading
-          tag={'h3'}
-          children={gameLanguage.player2} />
-        <img
-          alt=""
-          src={`/images/${playerTwoImage}_${props.playerTwoHand}.jpg`}/> 
-      </div>
-
+      className={mainClass}>
+      {player1ChosenHand}
+      {player2ChosenHand}
     </section>
   );
 }

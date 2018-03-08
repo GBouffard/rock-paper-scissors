@@ -1,4 +1,5 @@
 import React from 'react';
+import Heading from './heading';
 import PropTypes from 'prop-types';
 import {
   language,
@@ -16,9 +17,9 @@ export default function CompareHandsSection(props) {
         className="App__compare-hands">
       <div
         className="App__compare-hands-hand">
-        <h3>
-          {gameLanguage.player1}
-        </h3>
+        <Heading
+          tag={'h3'}
+          children={gameLanguage.player1} />
         <img
           alt=""
           src={`/images/${playerOneImage}_${props.playerOneHand}.jpg`}/>
@@ -26,9 +27,9 @@ export default function CompareHandsSection(props) {
 
       <div
         className="App__compare-hands-hand">
-        <h3>
-          {gameLanguage.player2}
-        </h3>
+        <Heading
+          tag={'h3'}
+          children={gameLanguage.player2} />
         <img
           alt=""
           src={`/images/${playerTwoImage}_${props.playerTwoHand}.jpg`}/> 

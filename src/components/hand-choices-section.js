@@ -6,18 +6,21 @@ import {
   urls
 } from '../constants/game-constants';
 import '../css/App.css';
+import '../css/hand-choices-section.css';
+
+const mainClass = 'hand-choices-section';
 
 export default function HandChoicesSection(props) {
   return (
     <section
-      className={`App__chose-hands`}>
+      className={mainClass}>
 
       <Heading
-        className={`App__chose-hands-title`}
+        className={`${mainClass}__title`}
         children={props.heading} />
 
       <div
-        className={`App__chose-hands-choices App__chose-hands-choices--${props.className}`}>
+        className={`${mainClass}__choices ${mainClass}__choices--${props.className}`}>
         <ImageButton
           className="image-button"
           url={urls.rockChoice}

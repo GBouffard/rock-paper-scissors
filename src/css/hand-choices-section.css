@@ -1,0 +1,29 @@
+.hand-choices-section {
+  position: relative;
+  top: 12%;
+}
+
+.hand-choices-section__title {
+  margin: 25px 0 20px;
+  font-size: 24px;
+  font-family: monospace;
+  text-shadow: 1px 1px 1px darkred
+}
+
+.hand-choices-section__choices {
+  background-image: url("/images/danger.jpg");
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 200px;
+  margin: 0 auto;
+  border: 5px solid;
+}
+
+.hand-choices-section__choices--one-player {
+  max-width: 780px;
+}
+
+.hand-choices-section__choices--two-players {
+  max-width: 500px;
+}

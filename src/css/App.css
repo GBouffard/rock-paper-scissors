@@ -32,6 +32,13 @@
   border-color: black;
 }
 
+.two-players-hand-choices-section-container {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 12%;
+}
+
 .home-page-button {
   position: absolute;
   bottom: 20px;
@@ -87,43 +94,6 @@
   background: -o-linear-gradient(orangered 0%,darkorange 100%);
   background: -ms-linear-gradient(orangered 0%,darkorange 100%);
   background: linear-gradient(orangered 0%,darkorange 100%);
-}
-
-.App__chose-hands {
-  position: relative;
-  top: 12%;
-}
-
-.App__chose-hands-title {
-  margin: 25px 0 20px;
-  font-size: 24px;
-  font-family: monospace;
-  text-shadow: 1px 1px 1px darkred
-}
-
-.App__chose-hands-choices {
-  background-image: url("/images/danger.jpg");
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 200px;
-  margin: 0 auto;
-  border: 5px solid;
-}
-
-.App__chose-hands-choices--one-player {
-  max-width: 780px;
-}
-
-.App__chose-hands-choices--two-players {
-  max-width: 500px;
-}
-
-.App__two-players-hand-choices-section {
-  display: flex;
-  justify-content: space-around;
-  position: relative;
-  top: 12%;
 }
 
 .App__compare-hands {

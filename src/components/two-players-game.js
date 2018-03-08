@@ -139,7 +139,7 @@ export default class TwoPlayersGame extends Component {
 
     const playersChoices = (
       <section
-        className="App__two-players-hand-choices-section">
+        className="two-players-hand-choices-section-container">
         {playerOneChoice}
         {playerTwoChoice}
       </section>

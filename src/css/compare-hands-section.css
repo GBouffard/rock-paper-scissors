@@ -1,0 +1,23 @@
+.compare-hands-section {
+  position: relative;
+  top: 14%;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 10%;
+}
+
+.compare-hands-section__hand {
+  width: 30%;
+  min-width: 200px;
+  margin: 10px;
+  background: firebrick;
+  border: 3px solid black;
+  padding-bottom: 10px;
+  height: 100%;
+  background: -moz-linear-gradient(firebrick 0%,darkorange 100%);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,firebrick),color-stop(100%,darkorange));
+  background: -webkit-linear-gradient(firebrick 0%,darkorange 100%);
+  background: -o-linear-gradient(firebrick 0%,darkorange 100%);
+  background: -ms-linear-gradient(firebrick 0%,darkorange 100%);
+  background: linear-gradient(firebrick 0%,darkorange 100%);
+}

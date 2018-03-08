@@ -5,7 +5,9 @@ import {
   language,
   imageKeywords
 } from '../constants/game-constants';
-import '../css/App.css';
+import '../css/compare-hands-section.css';
+
+const mainClass = 'compare-hands-section';
 
 export default function CompareHandsSection(props) {
   const gameLanguage = props.twoPlayersGame ? language.twoPlayersGame : language.onePlayerGame;
@@ -14,9 +16,10 @@ export default function CompareHandsSection(props) {
 
   return (
     <section
-        className="App__compare-hands">
+        className={mainClass}>
+
       <div
-        className="App__compare-hands-hand">
+        className={`${mainClass}__hand`}>
         <Heading
           tag={'h3'}
           children={gameLanguage.player1} />
@@ -26,7 +29,7 @@ export default function CompareHandsSection(props) {
       </div>
 
       <div
-        className="App__compare-hands-hand">
+        className={`${mainClass}__hand`}>
         <Heading
           tag={'h3'}
           children={gameLanguage.player2} />
@@ -34,6 +37,7 @@ export default function CompareHandsSection(props) {
           alt=""
           src={`/images/${playerTwoImage}_${props.playerTwoHand}.jpg`}/> 
       </div>
+
     </section>
   );
 }

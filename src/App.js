@@ -5,7 +5,7 @@ import {
   language,
   urls
 } from './constants/game-constants';
-import './App.css';
+import './css/App.css';
 
 class App extends Component {
   constructor() {

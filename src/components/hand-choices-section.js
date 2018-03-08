@@ -4,7 +4,7 @@ import ImageButton from './image-button';
 import {
   urls
 } from '../constants/game-constants';
-import '../App.css';
+import '../css/App.css';
 
 export default function HandChoicesSection(props) {
   return (

@@ -5,7 +5,7 @@ import {
   language,
   imageKeywords
 } from '../constants/game-constants';
-import '../App.css';
+import '../css/App.css';
 
 export default function CompareHandsSection(props) {
   const gameLanguage = props.twoPlayersGame ? language.twoPlayersGame : language.onePlayerGame;

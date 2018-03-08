@@ -9,7 +9,7 @@ import {
   hands,
   language
 } from '../constants/game-constants';
-import '../App.css';
+import '../css/App.css';
 
 export default class TwoPlayersGame extends Component {
   constructor() {

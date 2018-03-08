@@ -7,7 +7,7 @@ import {
   hands,
   language
 } from '../constants/game-constants';
-import '../App.css';
+import '../css/App.css';
 
 export default class OnePlayerGame extends Component {
   constructor() {

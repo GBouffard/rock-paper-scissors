@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import gameLogic from '../services/game-logic';
-import HandChoicesSection from '../components/hand-choices-section';
-import CompareHandsSection from '../components/compare-hands-section';
-import Button from '../components/button';
-import HomePageButton from '../components/home-page-button';
+import HandChoicesSection from './hand-choices-section';
+import CompareHandsSection from './compare-hands-section';
+import Button from './button';
+import HomePageButton from './home-page-button';
+import WaitingForPlayer from './waiting-for-player';
 import {
   hands,
   language
@@ -105,11 +106,9 @@ export default class TwoPlayersGame extends Component {
     );
 
     const waitingForPlayerTwo = (
-      <div
-        className="chosen-hand">
-        {language.twoPlayersGame.player1waiting}
-      </div>
-    )
+      <WaitingForPlayer
+        children={language.twoPlayersGame.player1waiting} />
+    );
 
     const onlyPlayerOneChose = this.state.playerOneHand && !this.state.playerTwoHand;
     const playerOneChoice = onlyPlayerOneChose ? waitingForPlayerTwo : playerOneHandChoices;
@@ -124,11 +123,9 @@ export default class TwoPlayersGame extends Component {
     );
 
     const waitingForPlayerOne = (
-      <div
-        className="chosen-hand">
-        {language.twoPlayersGame.player2waiting}
-      </div>
-    )
+      <WaitingForPlayer
+        children={language.twoPlayersGame.player2waiting} />
+    );
 
     const onlyPlayerTwoChose = this.state.playerTwoHand && !this.state.playerOneHand;
     const playerTwoChoice = onlyPlayerTwoChose ? waitingForPlayerOne : playerTwoHandChoices;

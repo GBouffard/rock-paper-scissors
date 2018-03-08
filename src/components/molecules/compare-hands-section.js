@@ -1,6 +1,7 @@
 import React from 'react';
 import Heading from '../atoms/heading';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import {
   language,
   imageKeywords
@@ -13,6 +14,11 @@ export default function CompareHandsSection(props) {
   const gameLanguage = language[props.isTwoPlayersGame ? 'twoPlayersGame' : 'onePlayerGame'];
   const resultOne = imageKeywords.playerOne[props.resultsIndex];
   const resultTwo = imageKeywords.playerTwo[props.resultsIndex];
+
+  const mainClassName = classNames(mainClass, {
+    'static': props.isTwoPlayersGame
+  });
+
 
   const chosenHandElement = (heading, result, choice) => {
     return (
@@ -33,7 +39,7 @@ export default function CompareHandsSection(props) {
 
   return (
     <section
-      className={mainClass}>
+      className={mainClassName}>
       {player1ChosenHand}
       {player2ChosenHand}
     </section>

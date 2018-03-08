@@ -3,6 +3,7 @@ import gameLogic from '../../services/game-logic';
 import HandChoicesSection from '../molecules/hand-choices-section';
 import CompareHandsSection from '../molecules/compare-hands-section';
 import HomePageButton from '../atoms/home-page-button';
+import GameResults from '../atoms/game-results';
 import {
   hands,
   language
@@ -56,11 +57,9 @@ export default class OnePlayerGame extends Component {
         playerOneHand={this.state.playerOneHand} />
     );
 
-    const gameResultsSectionElement = (
-      <section
-        className="App__results">
-        {results}
-      </section>
+    const gameResultsElement = (
+      <GameResults
+        children={results} />
     );
 
     return (
@@ -73,7 +72,7 @@ export default class OnePlayerGame extends Component {
           onChoseScissors={this.choseScissors} />
 
         {playerTwoHand && compareHandsSectionElement}
-        {results && gameResultsSectionElement}
+        {results && gameResultsElement}
 
         <HomePageButton />
       </div>

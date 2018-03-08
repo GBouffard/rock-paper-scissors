@@ -5,6 +5,7 @@ import CompareHandsSection from '../molecules/compare-hands-section';
 import NewGameButton from '../atoms/new-game-button';
 import HomePageButton from '../atoms/home-page-button';
 import WaitingForPlayer from '../atoms/waiting-for-player';
+import GameResults from '../atoms/game-results';
 import {
   hands,
   language
@@ -90,11 +91,9 @@ export default class TwoPlayersGame extends Component {
         resultsIndex={resultsIndex} />
     );
 
-    const gameResultsSectionElement = (
-      <section
-        className="App__results">
-        {results}
-      </section>
+    const gameResultsElement = (
+      <GameResults
+        children={results} />
     );
 
     const makePlayerChoice = (heading, choseRock, chosePaper, choseScissors, waiting, whoChose) => {
@@ -140,7 +139,7 @@ export default class TwoPlayersGame extends Component {
       <div className="App">
         {playSection}
         {bothHandsChosen && compareHandsSectionElement}
-        {bothHandsChosen && gameResultsSectionElement}
+        {bothHandsChosen && gameResultsElement}
         <HomePageButton />
       </div>
     );

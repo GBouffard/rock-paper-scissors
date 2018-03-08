@@ -21,3 +21,7 @@
   background: -ms-linear-gradient(firebrick 0%,darkorange 100%);
   background: linear-gradient(firebrick 0%,darkorange 100%);
 }
+
+.static {
+  position: static;
+}

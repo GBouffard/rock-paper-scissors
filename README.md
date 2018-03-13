@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/GBouffard/rock-paper-scissors.svg?branch=master)](https://travis-ci.org/GBouffard/rock-paper-scissors)
+
 :moyai: Rock :page_with_curl: Paper :scissors: Scissors
 ===
 This is Guillaume's Rock, Paper, Scissors game:
@@ -52,6 +54,7 @@ Methodology:
 - I started with unit logic tests and based the game logic on how it is supposed to work.
 - I then started with a 1 player game; and further down the line moved to a 2 players game.
 - The React code is gearing towards re-usability but due to the time constraint, can be improved.
+- At the end, I added Travis CI is a hosted, distributed continuous integration service; which insured that the build is passing.
 
 What I learnt:
 ----
@@ -65,5 +68,4 @@ What to improve:
 - sass or less compiling could also be added.
 - Component state is fine as a MVP, but an application architecture such as Flux or Redux would be a great addition. 
 - Due to time constraints, views are only for desktop clients at this point; responsive design still needs to be done.
-- A continuous integration tool could also be added.
 - The project is still open and I will keep improving it as I find the time to. Suggestions are more than welcome.

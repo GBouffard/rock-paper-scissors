@@ -1,4 +1,4 @@
-Continuous Integration through Travis CI: [![Build Status](https://travis-ci.org/GBouffard/rock-paper-scissors.svg?branch=master)](https://travis-ci.org/GBouffard/rock-paper-scissors)
+[![Build Status](https://travis-ci.org/GBouffard/rock-paper-scissors.svg?branch=master)](https://travis-ci.org/GBouffard/rock-paper-scissors) (Continuous Integration through Travis CI)
 
 :moyai: Rock :page_with_curl: Paper :scissors: Scissors
 ===

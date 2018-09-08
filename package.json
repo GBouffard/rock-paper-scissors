@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://gbouffard.github.io/rock-paper-scissors/",
+  "engines": {
+    "node": ">=9.8.0",
+    "npm": ">=5.7.1"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "gh-pages": "^1.2.0",

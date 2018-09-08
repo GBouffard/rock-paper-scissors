@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/GBouffard/rock-paper-scissors.svg?branch=master)](https://travis-ci.org/GBouffard/rock-paper-scissors)
+Continuous Integration through Travis CI: [![Build Status](https://travis-ci.org/GBouffard/rock-paper-scissors.svg?branch=master)](https://travis-ci.org/GBouffard/rock-paper-scissors)
 
 :moyai: Rock :page_with_curl: Paper :scissors: Scissors
 ===
@@ -66,6 +66,6 @@ What to improve:
 - The logic of the game is unit tested however for some reasons the enzyme, react-test-renderer and Chai set-up conflicted; answers found on StackOverflow and Github didn't resolve so after a while, instead of blocking I had to skip integration tests and delay that part of the debugging to later. I have investigated other testing frameworks to use for functional tests but didn't have the time to try them yet.
 - The whole CSS and Flexbox integration can be improved.
 - sass or less compiling could also be added.
-- Component state is fine as a MVP, but an application architecture such as Flux or Redux would be a great addition. 
+- Component state is fine as a MVP, but an application architecture such as Flux or Redux would be a great addition.
 - Due to time constraints, views are only for desktop clients at this point; responsive design still needs to be done.
 - The project is still open and I will keep improving it as I find the time to. Suggestions are more than welcome.

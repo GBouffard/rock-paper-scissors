@@ -39,12 +39,14 @@ const language = {
   backToHomePage: 'Back to home page'
 };
 
+const baseUrl = process.env.PUBLIC_URL;
+
 const urls = {
-  onePlayerGame: '/images/1_player_game.png',
-  twoPlayersGame: '/images/2_players_game.png',
-  rockChoice: '/images/hand_rock.jpg',
-  paperChoice: '/images/hand_paper.jpg',
-  scissorsChoice: '/images/hand_scissors.jpg'
+  onePlayerGame: `${baseUrl}/images/1_player_game.png`,
+  twoPlayersGame: `${baseUrl}/images/2_players_game.png`,
+  rockChoice: `${baseUrl}/images/hand_rock.jpg`,
+  paperChoice: `${baseUrl}/images/hand_paper.jpg`,
+  scissorsChoice: `${baseUrl}/images/hand_scissors.jpg`
 };
 
 const imageKeywords = {
@@ -55,6 +57,7 @@ const imageKeywords = {
 export {
   hands,
   language,
+  baseUrl,
   urls,
   beats,
   imageKeywords

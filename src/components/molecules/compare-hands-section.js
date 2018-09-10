@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {
   language,
-  imageKeywords
+  imageKeywords,
+  baseUrl
 } from '../../constants/game-constants';
 import '../../css/compare-hands-section.css';
 
@@ -21,6 +22,8 @@ export default function CompareHandsSection(props) {
 
 
   const chosenHandElement = (heading, result, choice) => {
+    const resultImageUrl = `${baseUrl}/images/${result}_${choice.toLowerCase()}.jpg`;
+
     return (
       <div
         className={`${mainClass}__hand`}>
@@ -29,7 +32,7 @@ export default function CompareHandsSection(props) {
           children={heading} />
         <img
           alt=""
-          src={`/images/${result}_${choice}.jpg`}/>
+          src={resultImageUrl} />
       </div>
     );
   }

@@ -6,27 +6,28 @@ import App from './App';
 import OnePlayerGame from './components/organisms/one-player-game';
 import TwoPlayersGame from './components/organisms/two-players-game';
 import registerServiceWorker from './registerServiceWorker';
+import { baseUrl } from './constants/game-constants';
 
 ReactDOM.render((
-  <BrowserRouter>
+  <BrowserRouter basename={baseUrl}>
     <Switch>
       <Route
         exact
         path="/"
-        component={App}/>
+        component={App} />
 
       <Route
         exact
         path="/one-player-game"
-        component={OnePlayerGame}/>
+        component={OnePlayerGame} />
 
       <Route
         exact
         path="/two-players-game"
-        component={TwoPlayersGame}/>
+        component={TwoPlayersGame} />
     </Switch>
   </BrowserRouter>
-  ), document.getElementById('root')
+), document.getElementById('root')
 );
 
 registerServiceWorker();

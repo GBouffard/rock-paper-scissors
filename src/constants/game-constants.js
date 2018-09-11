@@ -42,8 +42,8 @@ const language = {
 const baseUrl = process.env.PUBLIC_URL;
 
 const urls = {
-  onePlayerGame: `${baseUrl}/images/1_player_game.png`,
-  twoPlayersGame: `${baseUrl}/images/2_players_game.png`,
+  onePlayerGame: `${baseUrl}/images/1_player_game.svg`,
+  twoPlayersGame: `${baseUrl}/images/2_players_game.svg`,
   rockChoice: `${baseUrl}/images/hand_rock.jpg`,
   paperChoice: `${baseUrl}/images/hand_paper.jpg`,
   scissorsChoice: `${baseUrl}/images/hand_scissors.jpg`

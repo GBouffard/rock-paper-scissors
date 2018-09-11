@@ -12,6 +12,13 @@ button {
   opacity: 0.7;
 }
 
+.game-type-button-mobile {
+  width: 100px;
+  height: 100px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
 .game-type-button:hover {
   border-color: black;
   opacity: 0.85;
@@ -21,14 +28,20 @@ button {
   width: 200px;
   height: 200px;
   margin: 100px auto 10px;
-  padding:8px 18px;
-  background: #F56200;
-  background: -moz-linear-gradient(#F56200 0%,#FEBB49 100%);
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#F56200),color-stop(100%,#FEBB49));
-  background: -webkit-linear-gradient(#F56200 0%,#FEBB49 100%);
-  background: -o-linear-gradient(#F56200 0%,#FEBB49 100%);
-  background: -ms-linear-gradient(#F56200 0%,#FEBB49 100%);
-  background: linear-gradient(#F56200 0%,#FEBB49 100%);
+  padding: 8px 18px;
+  background: #f56200;
+  background: -moz-linear-gradient(#f56200 0%, #febb49 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #f56200),
+    color-stop(100%, #febb49)
+  );
+  background: -webkit-linear-gradient(#f56200 0%, #febb49 100%);
+  background: -o-linear-gradient(#f56200 0%, #febb49 100%);
+  background: -ms-linear-gradient(#f56200 0%, #febb49 100%);
+  background: linear-gradient(#f56200 0%, #febb49 100%);
   border: 3px solid black;
   border-radius: 100px;
   -moz-border-radius: 100px;
@@ -43,35 +56,52 @@ button {
   position: absolute;
   right: 20px;
   bottom: 20px;
-  padding:8px 18px;
-  background: #F56200;
-  background: -moz-linear-gradient(#F56200 0%,#FEBB49 100%);
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#F56200),color-stop(100%,#FEBB49));
-  background: -webkit-linear-gradient(#F56200 0%,#FEBB49 100%);
-  background: -o-linear-gradient(#F56200 0%,#FEBB49 100%);
-  background: -ms-linear-gradient(#F56200 0%,#FEBB49 100%);
-  background: linear-gradient(#F56200 0%,#FEBB49 100%);
+  padding: 8px 18px;
+  background: #f56200;
+  background: -moz-linear-gradient(#f56200 0%, #febb49 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #f56200),
+    color-stop(100%, #febb49)
+  );
+  background: -webkit-linear-gradient(#f56200 0%, #febb49 100%);
+  background: -o-linear-gradient(#f56200 0%, #febb49 100%);
+  background: -ms-linear-gradient(#f56200 0%, #febb49 100%);
+  background: linear-gradient(#f56200 0%, #febb49 100%);
   border: 3px solid black;
-  border-radius:48px;
-  -moz-border-radius:48px;
-  -webkit-border-radius:48px;
+  border-radius: 48px;
+  -moz-border-radius: 48px;
+  -webkit-border-radius: 48px;
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#F56200',endColorstr='#FEBB49',GradientType=0);
-  font-family:'Helvetica Neue',sans-serif;
-  font-size:16px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
   font-weight: bold;
-  color:#623F1D;
+  color: #623f1d;
 }
 
 .home-page-button:hover {
   background: orangered;
-  background: -moz-linear-gradient(orangered 0%,darkorange 100%);
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,orangered),color-stop(100%,darkorange));
-  background: -webkit-linear-gradient(orangered 0%,darkorange 100%);
-  background: -o-linear-gradient(orangered 0%,darkorange 100%);
-  background: -ms-linear-gradient(orangered 0%,darkorange 100%);
-  background: linear-gradient(orangered 0%,darkorange 100%);
+  background: -moz-linear-gradient(orangered 0%, darkorange 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, orangered),
+    color-stop(100%, darkorange)
+  );
+  background: -webkit-linear-gradient(orangered 0%, darkorange 100%);
+  background: -o-linear-gradient(orangered 0%, darkorange 100%);
+  background: -ms-linear-gradient(orangered 0%, darkorange 100%);
+  background: linear-gradient(orangered 0%, darkorange 100%);
 }
 
 .image-button {
   height: 145px;
+}
+
+.spread-button-image {
+  width: 100%;
+  height: 100%;
 }

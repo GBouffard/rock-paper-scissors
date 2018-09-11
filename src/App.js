@@ -8,6 +8,7 @@ import {
 } from './constants/game-constants';
 import './css/App.css';
 import './css/buttons.css';
+import Media from 'react-media';
 
 class App extends Component {
   constructor() {
@@ -39,6 +40,23 @@ class App extends Component {
   }
 
   render() {
+    const isMobileViewButton = (isMobileView, numberOfPlayers) => (
+      <ImageButton
+        url={numberOfPlayers === 1 ? urls.onePlayerGame : urls.twoPlayersGame}
+        className={`game-type-button ${isMobileView ? 'game-type-button-mobile' : null}`}
+        onClick={numberOfPlayers === 1 ? this.playOnePlayerGame : this.playTwoPlayersGame} />
+    );
+
+    const onePlayerButton =
+      (<Media query="(max-width: 480px)">
+        {matches => matches ? isMobileViewButton(true, 1) : isMobileViewButton(false, 1)}
+      </Media>);
+
+    const twoPlayersButton =
+      (<Media query="(max-width: 480px)">
+        {matches => matches ? isMobileViewButton(true, 2) : isMobileViewButton(false, 2)}
+      </Media>);
+
     return (
       <div
         className="App">
@@ -48,15 +66,8 @@ class App extends Component {
           children={language.gameType} />
 
         <div>
-          <ImageButton
-            url={urls.onePlayerGame}
-            className="game-type-button"
-            onClick={this.playOnePlayerGame} />
-
-          <ImageButton
-            url={urls.twoPlayersGame}
-            className="game-type-button"
-            onClick={this.playTwoPlayersGame} />
+          {onePlayerButton}
+          {twoPlayersButton}
         </div>
 
         {this.state.redirect}

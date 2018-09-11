@@ -25,6 +25,7 @@ Technologies used:
 - HTML
 - CSS
 - Flexbox
+- React-media
 - Jest
 
 Desktop preview:
@@ -46,6 +47,10 @@ cd rock-paper-scissors
 ./build.sh
 ```
 PS: the script will ask to chose options regarding running Jest tests; Press a to run all tests, then q to quit the test suite.
+
+Deployment link (Github Pages:
+----
+[Guillaume's Rock Paper Scissors](https://gbouffard.github.io/rock-paper-scissors/)
 
 
 Methodology:

@@ -6,12 +6,13 @@ const ImageButton = (props) => {
   const imageElement = (
     <img
       alt=""
-      src={props.url}/>
+      className="spread-button-image"
+      src={props.url} />
   );
 
   return (
     <Button
-      children={imageElement} 
+      children={imageElement}
       {...props} />
   );
 };

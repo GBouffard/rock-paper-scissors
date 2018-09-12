@@ -40,40 +40,33 @@ class App extends Component {
   }
 
   render() {
-    const isMobileViewHeading = (isMobileView) =>
+    const isMobileHeading = (isMobile) =>
       <Heading
-        className={isMobileView ? 'App__intro-heading--mobile' : 'App__intro-heading'}
+        className={isMobile ? 'App__intro-heading--mobile' : 'App__intro-heading'}
         children={language.gameType} />;
 
-    const heading = (
-      <Media query="(max-width: 640px)">
-        {matches => matches ? isMobileViewHeading(true) : isMobileViewHeading(false)}
-      </Media>);
-
-    const isMobileViewButton = (isMobileView, numberOfPlayers) => (
+    const isMobileButton = (isMobile, numberOfPlayers) => (
       <ImageButton
         url={numberOfPlayers === 1 ? urls.onePlayerGame : urls.twoPlayersGame}
-        className={`game-type-button ${isMobileView ? 'game-type-button-mobile' : null}`}
+        className={`game-type-button ${isMobile ? 'game-type-button-mobile' : null}`}
         onClick={numberOfPlayers === 1 ? this.playOnePlayerGame : this.playTwoPlayersGame} />
     );
-
-    const onePlayerButton =
-      (<Media query="(max-width: 640px)">
-        {isMobileDevice => isMobileViewButton(isMobileDevice, 1)}
-      </Media>);
-
-    const twoPlayersButton =
-      (<Media query="(max-width: 640px)">
-        {isMobileDevice => isMobileViewButton(isMobileDevice, 2)}
-      </Media>);
 
     return (
       <div
         className="App">
-        {heading}
+
+        <Media query="(max-width: 640px)">
+          {isMobile => isMobileHeading(isMobile)}
+        </Media>
+
         <div>
-          {onePlayerButton}
-          {twoPlayersButton}
+          <Media query="(max-width: 640px)">
+            {isMobile => [
+              isMobileButton(isMobile, 1),
+              isMobileButton(isMobile, 2)
+            ]}
+          </Media>);
         </div>
 
         {this.state.redirect}

@@ -33,15 +33,11 @@ export default function HandChoicesSection(props) {
         className={`${mainClass}__choices ${mainClass}__choices--${gameType}`}>
 
         <Media query="(max-width: 640px)">
-          {isMobileDevice => isMobileViewImageButton(isMobileDevice, urls.rockChoice, props.onChoseRock)}
-        </Media>
-
-        <Media query="(max-width: 640px)">
-          {isMobileDevice => isMobileViewImageButton(isMobileDevice, urls.paperChoice, props.onChosePaper)}
-        </Media>
-
-        <Media query="(max-width: 640px)">
-          {isMobileDevice => isMobileViewImageButton(isMobileDevice, urls.scissorsChoice, props.onChoseScissors)}
+          {isMobile => [
+            isMobileViewImageButton(isMobile, urls.rockChoice, props.onChoseRock),
+            isMobileViewImageButton(isMobile, urls.paperChoice, props.onChosePaper),
+            isMobileViewImageButton(isMobile, urls.scissorsChoice, props.onChoseScissors)
+          ]}
         </Media>
 
       </div>

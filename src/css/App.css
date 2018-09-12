@@ -15,6 +15,11 @@
   margin: 140px 0 40px;
 }
 
+.App__intro-heading--mobile {
+  margin: 180px 0 40px;
+  font-size: 24px;
+}
+
 .two-players-hand-choices-section-container {
   display: flex;
   justify-content: space-around;

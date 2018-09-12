@@ -40,6 +40,16 @@ class App extends Component {
   }
 
   render() {
+    const isMobileViewHeading = (isMobileView) =>
+      <Heading
+        className={isMobileView ? 'App__intro-heading--mobile' : 'App__intro-heading'}
+        children={language.gameType} />;
+
+    const heading = (
+      <Media query="(max-width: 640px)">
+        {matches => matches ? isMobileViewHeading(true) : isMobileViewHeading(false)}
+      </Media>);
+
     const isMobileViewButton = (isMobileView, numberOfPlayers) => (
       <ImageButton
         url={numberOfPlayers === 1 ? urls.onePlayerGame : urls.twoPlayersGame}
@@ -48,23 +58,19 @@ class App extends Component {
     );
 
     const onePlayerButton =
-      (<Media query="(max-width: 480px)">
+      (<Media query="(max-width: 640px)">
         {matches => matches ? isMobileViewButton(true, 1) : isMobileViewButton(false, 1)}
       </Media>);
 
     const twoPlayersButton =
-      (<Media query="(max-width: 480px)">
+      (<Media query="(max-width: 640px)">
         {matches => matches ? isMobileViewButton(true, 2) : isMobileViewButton(false, 2)}
       </Media>);
 
     return (
       <div
         className="App">
-
-        <Heading
-          className="App__intro-heading"
-          children={language.gameType} />
-
+        {heading}
         <div>
           {onePlayerButton}
           {twoPlayersButton}

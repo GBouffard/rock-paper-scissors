@@ -2,6 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../App';
 
+/* Mock for window.matchMedia since <Media targetWindow> does not support `matchMedia` */
+window.matchMedia = () => {
+  return {
+    matches: false,
+    addListener: () => { },
+    removeListener: () => { }
+  };
+};
+
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);

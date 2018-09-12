@@ -17,6 +17,7 @@ button {
   height: 100px;
   min-width: 50px;
   min-height: 50px;
+  margin: 0 30px;
 }
 
 .game-type-button:hover {

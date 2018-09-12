@@ -59,12 +59,12 @@ class App extends Component {
 
     const onePlayerButton =
       (<Media query="(max-width: 640px)">
-        {matches => matches ? isMobileViewButton(true, 1) : isMobileViewButton(false, 1)}
+        {isMobileDevice => isMobileViewButton(isMobileDevice, 1)}
       </Media>);
 
     const twoPlayersButton =
       (<Media query="(max-width: 640px)">
-        {matches => matches ? isMobileViewButton(true, 2) : isMobileViewButton(false, 2)}
+        {isMobileDevice => isMobileViewButton(isMobileDevice, 2)}
       </Media>);
 
     return (

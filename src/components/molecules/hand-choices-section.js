@@ -7,8 +7,16 @@ import {
 } from '../../constants/game-constants';
 import '../../css/buttons.css';
 import '../../css/hand-choices-section.css';
+import Media from 'react-media';
 
 const mainClass = 'hand-choices-section';
+
+const isMobileViewImageButton = (isMobileView, url, onClick) => (
+  <ImageButton
+    url={url}
+    className={isMobileView ? 'image-button-mobile' : 'image-button'}
+    onClick={onClick} />
+);
 
 export default function HandChoicesSection(props) {
   const gameType = props.isTwoPlayersGame ? 'two-players' : 'one-player';
@@ -23,20 +31,19 @@ export default function HandChoicesSection(props) {
 
       <div
         className={`${mainClass}__choices ${mainClass}__choices--${gameType}`}>
-        <ImageButton
-          className="image-button"
-          url={urls.rockChoice}
-          onClick={props.onChoseRock} />
 
-        <ImageButton
-          className="image-button"
-          url={urls.paperChoice}
-          onClick={props.onChosePaper} />
+        <Media query="(max-width: 640px)">
+          {isMobileDevice => isMobileViewImageButton(isMobileDevice, urls.rockChoice, props.onChoseRock)}
+        </Media>
 
-        <ImageButton
-          className="image-button"
-          url={urls.scissorsChoice}
-          onClick={props.onChoseScissors} />
+        <Media query="(max-width: 640px)">
+          {isMobileDevice => isMobileViewImageButton(isMobileDevice, urls.paperChoice, props.onChosePaper)}
+        </Media>
+
+        <Media query="(max-width: 640px)">
+          {isMobileDevice => isMobileViewImageButton(isMobileDevice, urls.scissorsChoice, props.onChoseScissors)}
+        </Media>
+
       </div>
     </section>
   );

@@ -19,13 +19,8 @@ const playersChoicesClass = 'two-players-hand-choices-section-container';
 export default class TwoPlayersGame extends Component {
   constructor() {
     super();
-    this.choseRockOne = this.choseRockOne.bind(this);
-    this.chosePaperOne = this.chosePaperOne.bind(this);
-    this.choseScissorsOne = this.choseScissorsOne.bind(this);
-    this.choseRockTwo = this.choseRockTwo.bind(this);
-    this.chosePaperTwo = this.chosePaperTwo.bind(this);
-    this.choseScissorsTwo = this.choseScissorsTwo.bind(this);
     this.newGame = this.newGame.bind(this);
+    this.choseHand = this.choseHand.bind(this);
     this.state = {
       playerOneHand: null,
       playerTwoHand: null
@@ -39,42 +34,11 @@ export default class TwoPlayersGame extends Component {
     });
   }
 
-  choseRockOne() {
-    this.setHandStateOne(hands.rock);
-  }
-
-  chosePaperOne() {
-    this.setHandStateOne(hands.paper);
-  }
-
-  choseScissorsOne() {
-    this.setHandStateOne(hands.scissors);
-  }
-
-  setHandStateOne(hand) {
+  choseHand(playerID, hand) {
     this.setState({
-      playerOneHand: hand
+      [`player${playerID === 1 ? 'One' : 'Two'}Hand`]: hand
     });
   }
-
-  choseRockTwo() {
-    this.setHandStateTwo(hands.rock);
-  }
-
-  chosePaperTwo() {
-    this.setHandStateTwo(hands.paper);
-  }
-
-  choseScissorsTwo() {
-    this.setHandStateTwo(hands.scissors);
-  }
-
-  setHandStateTwo(hand) {
-    this.setState({
-      playerTwoHand: hand
-    });
-  }
-
 
   render() {
     let resultsIndex;
@@ -100,14 +64,14 @@ export default class TwoPlayersGame extends Component {
         children={results} />
     );
 
-    const makePlayerChoice = (heading, choseRock, chosePaper, choseScissors, waiting, whoChose) => {
+    const renderPlayerChoiceSection = (playerID, heading, choseHand, waiting, whoChose) => {
       const playerHandChoices = (
         <HandChoicesSection
           isTwoPlayersGame={true}
           heading={heading}
-          onChoseRock={choseRock}
-          onChosePaper={chosePaper}
-          onChoseScissors={choseScissors} />
+          onChoseRock={() => choseHand(playerID, hands.rock)}
+          onChosePaper={() => choseHand(playerID, hands.paper)}
+          onChoseScissors={() => choseHand(playerID, hands.scissors)} />
       );
 
       const waitingForPlayer = (
@@ -119,10 +83,10 @@ export default class TwoPlayersGame extends Component {
     };
 
     const onlyPlayerOneChose = this.state.playerOneHand && !this.state.playerTwoHand;
-    const playerOneChoice = makePlayerChoice(language.twoPlayersGame.player1Heading, this.choseRockOne, this.chosePaperOne, this.choseScissorsOne, language.twoPlayersGame.player1waiting, onlyPlayerOneChose);
+    const playerOneChoice = renderPlayerChoiceSection(1, language.twoPlayersGame.player1Heading, this.choseHand, language.twoPlayersGame.player1waiting, onlyPlayerOneChose);
 
     const onlyPlayerTwoChose = this.state.playerTwoHand && !this.state.playerOneHand;
-    const playerTwoChoice = makePlayerChoice(language.twoPlayersGame.player2Heading, this.choseRockTwo, this.chosePaperTwo, this.choseScissorsTwo, language.twoPlayersGame.player2waiting, onlyPlayerTwoChose);
+    const playerTwoChoice = renderPlayerChoiceSection(2, language.twoPlayersGame.player2Heading, this.choseHand, language.twoPlayersGame.player2waiting, onlyPlayerTwoChose);
 
     const newGameButton = (
       <NewGameButton

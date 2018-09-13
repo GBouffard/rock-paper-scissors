@@ -13,27 +13,12 @@ import '../../css/App.css';
 export default class OnePlayerGame extends Component {
   constructor() {
     super();
-    this.choseRock = this.choseRock.bind(this);
-    this.chosePaper = this.chosePaper.bind(this);
-    this.choseScissors = this.choseScissors.bind(this);
     this.state = {
       playerOneHand: null
     }
   }
 
-  choseRock() {
-    this.setHandState(hands.rock);
-  }
-
-  chosePaper() {
-    this.setHandState(hands.paper);
-  }
-
-  choseScissors() {
-    this.setHandState(hands.scissors);
-  }
-
-  setHandState(hand) {
+  choseHand(hand) {
     this.setState({
       playerOneHand: hand
     });
@@ -67,9 +52,9 @@ export default class OnePlayerGame extends Component {
 
         <HandChoicesSection
           heading={language.onePlayerGame.heading}
-          onChoseRock={this.choseRock}
-          onChosePaper={this.chosePaper}
-          onChoseScissors={this.choseScissors} />
+          onChoseRock={() => this.choseHand(hands.rock)}
+          onChosePaper={() => this.choseHand(hands.paper)}
+          onChoseScissors={() => this.choseHand(hands.scissors)} />
 
         {playerTwoHand && compareHandsSectionElement}
         {results && gameResultsElement}

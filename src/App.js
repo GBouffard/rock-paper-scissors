@@ -40,12 +40,12 @@ class App extends Component {
   }
 
   render() {
-    const isMobileHeading = (isMobile) =>
+    const renderHeading = (isMobile) =>
       <Heading
         className={isMobile ? 'App__intro-heading--mobile' : 'App__intro-heading'}
         children={language.gameType} />;
 
-    const isMobileButton = (isMobile, numberOfPlayers) => (
+    const renderGameModeButton = (isMobile, numberOfPlayers) => (
       <ImageButton
         url={numberOfPlayers === 1 ? urls.onePlayerGame : urls.twoPlayersGame}
         className={`game-type-button ${isMobile ? 'game-type-button-mobile' : null}`}
@@ -57,16 +57,16 @@ class App extends Component {
         className="App">
 
         <Media query="(max-width: 640px)">
-          {isMobile => isMobileHeading(isMobile)}
+          {isMobile => renderHeading(isMobile)}
         </Media>
 
         <div>
           <Media query="(max-width: 640px)">
             {isMobile => [
-              isMobileButton(isMobile, 1),
-              isMobileButton(isMobile, 2)
+              renderGameModeButton(isMobile, 1),
+              renderGameModeButton(isMobile, 2)
             ]}
-          </Media>);
+          </Media>
         </div>
 
         {this.state.redirect}

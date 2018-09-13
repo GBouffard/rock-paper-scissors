@@ -27,6 +27,10 @@
   top: 12%;
 }
 
+.two-players-hand-choices-section-container--mobile {
+  flex-direction: column;
+}
+
 .results {
   position: relative;
   top: 14%;

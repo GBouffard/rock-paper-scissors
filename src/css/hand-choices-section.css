@@ -7,16 +7,20 @@
   margin: 25px 0 20px;
   font-size: 24px;
   font-family: monospace;
-  text-shadow: 1px 1px 1px darkred
+  text-shadow: 1px 1px 1px darkred;
+}
+
+.hand-choices-section__title--mobile {
+  padding: 50px 0 0;
 }
 
 .hand-choices-section__choices {
-  background-image: url("/images/danger.jpg");
+  background-image: url('/images/danger.jpg');
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 200px;
   margin: 0 auto;
+  padding: 35px 0;
   border: 5px solid;
 }
 

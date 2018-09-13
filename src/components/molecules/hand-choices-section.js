@@ -11,7 +11,7 @@ import Media from 'react-media';
 
 const mainClass = 'hand-choices-section';
 
-const isMobileViewImageButton = (isMobileView, url, onClick) => (
+const renderHandImageButton = (isMobileView, url, onClick) => (
   <ImageButton
     url={url}
     className={isMobileView ? 'image-button-mobile' : 'image-button'}
@@ -25,18 +25,21 @@ export default function HandChoicesSection(props) {
     <section
       className={mainClass}>
 
-      <Heading
-        className={`${mainClass}__title`}
-        children={props.heading} />
+      <Media query="(max-width: 640px)">
+        {isMobile => <Heading
+          className={`${mainClass}__title ${isMobile ? `${mainClass}__title--mobile` : null}`}
+          children={props.heading} />
+        }
+      </Media>
 
       <div
         className={`${mainClass}__choices ${mainClass}__choices--${gameType}`}>
 
         <Media query="(max-width: 640px)">
           {isMobile => [
-            isMobileViewImageButton(isMobile, urls.rockChoice, props.onChoseRock),
-            isMobileViewImageButton(isMobile, urls.paperChoice, props.onChosePaper),
-            isMobileViewImageButton(isMobile, urls.scissorsChoice, props.onChoseScissors)
+            renderHandImageButton(isMobile, urls.rockChoice, props.onChoseRock),
+            renderHandImageButton(isMobile, urls.paperChoice, props.onChosePaper),
+            renderHandImageButton(isMobile, urls.scissorsChoice, props.onChoseScissors)
           ]}
         </Media>
 

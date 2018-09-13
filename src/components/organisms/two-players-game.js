@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Media from 'react-media';
 import gameLogic from '../../services/game-logic';
 import HandChoicesSection from '../molecules/hand-choices-section';
 import CompareHandsSection from '../molecules/compare-hands-section';
@@ -12,6 +13,8 @@ import {
 } from '../../constants/game-constants';
 import '../../css/App.css';
 import '../../css/buttons.css';
+
+const playersChoicesClass = 'two-players-hand-choices-section-container';
 
 export default class TwoPlayersGame extends Component {
   constructor() {
@@ -127,11 +130,14 @@ export default class TwoPlayersGame extends Component {
     );
 
     const playersChoices = (
-      <section
-        className="two-players-hand-choices-section-container">
-        {playerOneChoice}
-        {playerTwoChoice}
-      </section>
+      <Media query="(max-width: 640px)">
+        {isMobile => <section
+          className={`${playersChoicesClass} ${isMobile ? `${playersChoicesClass}--mobile` : null}`}>
+          {playerOneChoice}
+          {playerTwoChoice}
+        </section>
+        }
+      </Media>
     );
 
     const playSection = bothHandsChosen ? newGameButton : playersChoices;

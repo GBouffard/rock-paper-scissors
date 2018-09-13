@@ -5,7 +5,7 @@ import HandChoicesSection from '../molecules/hand-choices-section';
 import CompareHandsSection from '../molecules/compare-hands-section';
 import NewGameButton from '../atoms/new-game-button';
 import HomePageButton from '../atoms/home-page-button';
-import WaitingForPlayer from '../atoms/waiting-for-player';
+import WaitingForOpponentChoice from '../atoms/waiting-for-opponent-choice';
 import GameResults from '../atoms/game-results';
 import {
   hands,
@@ -43,9 +43,11 @@ export default class TwoPlayersGame extends Component {
   render() {
     let resultsIndex;
     let results;
-    const bothHandsChosen = this.state.playerOneHand && this.state.playerTwoHand;
+    const isPlayerOneOnlyPlayerWithChoice = this.state.playerOneHand && !this.state.playerTwoHand;
+    const isPlayerTwoOnlyPlayerWithChoice = this.state.playerTwoHand && !this.state.playerOneHand;
+    const areBothHandsChosen = this.state.playerOneHand && this.state.playerTwoHand;
 
-    if (bothHandsChosen) {
+    if (areBothHandsChosen) {
       resultsIndex = gameLogic.gameResult(this.state.playerOneHand, this.state.playerTwoHand);
       results = language.twoPlayersGame.results[resultsIndex];
     }
@@ -64,36 +66,33 @@ export default class TwoPlayersGame extends Component {
         children={results} />
     );
 
-    const renderPlayerChoiceSection = (playerID, heading, choseHand, waiting, whoChose) => {
-      const playerHandChoices = (
+    const renderPlayerChoiceSection = (playerID, isOnlyPlayerWithChoice) => {
+      const renderHandChoices = (
         <HandChoicesSection
           isTwoPlayersGame={true}
-          heading={heading}
-          onChoseRock={() => choseHand(playerID, hands.rock)}
-          onChosePaper={() => choseHand(playerID, hands.paper)}
-          onChoseScissors={() => choseHand(playerID, hands.scissors)} />
+          heading={language.twoPlayersGame[`player${playerID}Heading`]}
+          onChoseRock={() => this.choseHand(playerID, hands.rock)}
+          onChosePaper={() => this.choseHand(playerID, hands.paper)}
+          onChoseScissors={() => this.choseHand(playerID, hands.scissors)} />
       );
 
-      const waitingForPlayer = (
-        <WaitingForPlayer
-          children={waiting} />
+      const renderWaitingForOpponentChoice = (
+        <WaitingForOpponentChoice
+          children={language.twoPlayersGame[`player${playerID}waiting`]} />
       );
 
-      return whoChose ? waitingForPlayer : playerHandChoices;
+      return isOnlyPlayerWithChoice ? renderWaitingForOpponentChoice : renderHandChoices;
     };
 
-    const onlyPlayerOneChose = this.state.playerOneHand && !this.state.playerTwoHand;
-    const playerOneChoice = renderPlayerChoiceSection(1, language.twoPlayersGame.player1Heading, this.choseHand, language.twoPlayersGame.player1waiting, onlyPlayerOneChose);
+    const playerOneChoice = renderPlayerChoiceSection(1, isPlayerOneOnlyPlayerWithChoice);
+    const playerTwoChoice = renderPlayerChoiceSection(2, isPlayerTwoOnlyPlayerWithChoice);
 
-    const onlyPlayerTwoChose = this.state.playerTwoHand && !this.state.playerOneHand;
-    const playerTwoChoice = renderPlayerChoiceSection(2, language.twoPlayersGame.player2Heading, this.choseHand, language.twoPlayersGame.player2waiting, onlyPlayerTwoChose);
-
-    const newGameButton = (
+    const renderNewGameButton = (
       <NewGameButton
         onClick={this.newGame} />
     );
 
-    const playersChoices = (
+    const renderPlayersChoicesSections = (
       <Media query="(max-width: 640px)">
         {isMobile => <section
           className={`${playersChoicesClass} ${isMobile ? `${playersChoicesClass}--mobile` : null}`}>
@@ -104,13 +103,11 @@ export default class TwoPlayersGame extends Component {
       </Media>
     );
 
-    const playSection = bothHandsChosen ? newGameButton : playersChoices;
-
     return (
       <div className="App">
-        {playSection}
-        {bothHandsChosen && compareHandsSectionElement}
-        {bothHandsChosen && gameResultsElement}
+        {areBothHandsChosen ? renderNewGameButton : renderPlayersChoicesSections}
+        {areBothHandsChosen && compareHandsSectionElement}
+        {areBothHandsChosen && gameResultsElement}
         <HomePageButton />
       </div>
     );

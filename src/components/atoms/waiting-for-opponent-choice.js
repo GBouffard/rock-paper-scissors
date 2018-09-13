@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const WaitingForPlayer = ({ children }) => (
+const WaitingForOpponentChoice = ({ children }) => (
   <div
     className="chosen-hand">
     {children}
   </div>
 );
 
-export default WaitingForPlayer;
+export default WaitingForOpponentChoice;
 
-WaitingForPlayer.propTypes = {
+WaitingForOpponentChoice.propTypes = {
   children: PropTypes.node.isRequired
 };

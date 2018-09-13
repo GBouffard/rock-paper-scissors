@@ -58,8 +58,9 @@ Methodology:
 - I first scaffolded the app through react-create-app.
 - I started with unit logic tests and based the game logic on how it is supposed to work.
 - I then started with a 1 player game; and further down the line moved to a 2 players game.
-- The React code is gearing towards re-usability but due to the time constraint, can be improved.
-- At the end, I added Travis CI is a hosted, distributed continuous integration service; which insured that the build is passing.
+- I then applied responsive design using react-media
+- The React code is gearing towards re-usability.
+- Travis CI is being us as continuous integration tool; insuring that the build is passing.
 
 What I learnt:
 ----
@@ -72,5 +73,5 @@ What to improve:
 - The whole CSS and Flexbox integration can be improved.
 - sass or less compiling could also be added.
 - Component state is fine as a MVP, but an application architecture such as Flux or Redux would be a great addition.
-- Due to time constraints, views are only for desktop clients at this point; responsive design still needs to be done.
+- Accessibility could be improved.
 - The project is still open and I will keep improving it as I find the time to. Suggestions are more than welcome.

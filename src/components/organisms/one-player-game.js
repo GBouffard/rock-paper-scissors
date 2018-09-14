@@ -10,9 +10,30 @@ import {
 } from '../../constants/game-constants';
 import '../../css/App.css';
 
+const playerChoiceSection = (choseHand) => (
+  <HandChoicesSection
+    heading={language.onePlayerGame.heading}
+    onChoseRock={() => choseHand(hands.rock)}
+    onChosePaper={() => choseHand(hands.paper)}
+    onChoseScissors={() => choseHand(hands.scissors)} />
+);
+
+const compareHandsSection = (playerOneHand, playerTwoHand, resultsIndex) => (
+  <CompareHandsSection
+    playerOneHand={playerOneHand}
+    playerTwoHand={playerTwoHand}
+    resultsIndex={resultsIndex} />
+);
+
+const gameResult = (result) => (
+  <GameResults
+    children={result} />
+);
+
 export default class OnePlayerGame extends Component {
   constructor() {
     super();
+    this.choseHand = this.choseHand.bind(this);
     this.state = {
       playerOneHand: null
     }
@@ -25,40 +46,22 @@ export default class OnePlayerGame extends Component {
   }
 
   render() {
-    let playerTwoHand;
+    const { playerOneHand } = this.state;
+    let cpuHand;
     let resultsIndex;
-    let results;
+    let result;
 
-    if (this.state.playerOneHand) {
-      playerTwoHand = gameLogic.choseCPUHand();
-      resultsIndex = gameLogic.gameResult(this.state.playerOneHand, playerTwoHand);
-      results = language.onePlayerGame.results[resultsIndex];
+    if (playerOneHand) {
+      cpuHand = gameLogic.choseCPUHand();
+      resultsIndex = gameLogic.gameResult(playerOneHand, cpuHand);
+      result = language.onePlayerGame.results[resultsIndex];
     }
-
-    const compareHandsSectionElement = (
-      <CompareHandsSection
-        playerTwoHand={playerTwoHand}
-        resultsIndex={resultsIndex}
-        playerOneHand={this.state.playerOneHand} />
-    );
-
-    const gameResultsElement = (
-      <GameResults
-        children={results} />
-    );
 
     return (
       <div className="App">
-
-        <HandChoicesSection
-          heading={language.onePlayerGame.heading}
-          onChoseRock={() => this.choseHand(hands.rock)}
-          onChosePaper={() => this.choseHand(hands.paper)}
-          onChoseScissors={() => this.choseHand(hands.scissors)} />
-
-        {playerTwoHand && compareHandsSectionElement}
-        {results && gameResultsElement}
-
+        {playerChoiceSection(this.choseHand)}
+        {cpuHand && compareHandsSection(playerOneHand, cpuHand, resultsIndex)}
+        {result && gameResult(result)}
         <HomePageButton />
       </div>
     );

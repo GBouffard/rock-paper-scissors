@@ -16,6 +16,54 @@ import '../../css/buttons.css';
 
 const playersChoicesClass = 'two-players-hand-choices-section-container';
 
+const newGameButton = (onClick) => (
+  <NewGameButton
+    onClick={onClick} />
+);
+
+const individualPlayerChoiceSection = (playerID, isOnlyPlayerWithChoice, choseHand) => {
+  const handChoices = (
+    <HandChoicesSection
+      isTwoPlayersGame={true}
+      heading={language.twoPlayersGame[`player${playerID}Heading`]}
+      onChoseRock={() => choseHand(playerID, hands.rock)}
+      onChosePaper={() => choseHand(playerID, hands.paper)}
+      onChoseScissors={() => choseHand(playerID, hands.scissors)} />
+  );
+
+  const waitingForOpponentChoice = (
+    <WaitingForOpponentChoice
+      children={language.twoPlayersGame[`player${playerID}waiting`]} />
+  );
+
+  return isOnlyPlayerWithChoice ? waitingForOpponentChoice : handChoices;
+};
+
+const playersChoicesSections = (playerOneChoice, playerTwoChoice) => (
+  <Media query="(max-width: 640px)">
+    {isMobile => <section
+      className={`${playersChoicesClass} ${isMobile ? `${playersChoicesClass}--mobile` : null}`}>
+      {playerOneChoice}
+      {playerTwoChoice}
+    </section>
+    }
+  </Media>
+);
+
+const compareHandsSection = (playerOneHand, playerTwoHand, resultsIndex) => (
+  <CompareHandsSection
+    isTwoPlayersGame={true}
+    playerOneHand={playerOneHand}
+    playerTwoHand={playerTwoHand}
+    resultsIndex={resultsIndex} />
+);
+
+const gameResult = (result) => (
+  <GameResults
+    className="static"
+    children={result} />
+);
+
 export default class TwoPlayersGame extends Component {
   constructor() {
     super();
@@ -41,73 +89,30 @@ export default class TwoPlayersGame extends Component {
   }
 
   render() {
+    const {
+      playerOneHand,
+      playerTwoHand
+    } = this.state;
+
     let resultsIndex;
-    let results;
-    const isPlayerOneOnlyPlayerWithChoice = this.state.playerOneHand && !this.state.playerTwoHand;
-    const isPlayerTwoOnlyPlayerWithChoice = this.state.playerTwoHand && !this.state.playerOneHand;
-    const areBothHandsChosen = this.state.playerOneHand && this.state.playerTwoHand;
+    let result;
+    const isPlayerOneOnlyPlayerWithChoice = playerOneHand && !playerTwoHand;
+    const isPlayerTwoOnlyPlayerWithChoice = playerTwoHand && !playerOneHand;
+    const areBothHandsChosen = playerOneHand && playerTwoHand;
+
+    const playerOneChoice = individualPlayerChoiceSection(1, isPlayerOneOnlyPlayerWithChoice, this.choseHand);
+    const playerTwoChoice = individualPlayerChoiceSection(2, isPlayerTwoOnlyPlayerWithChoice, this.choseHand);
 
     if (areBothHandsChosen) {
-      resultsIndex = gameLogic.gameResult(this.state.playerOneHand, this.state.playerTwoHand);
-      results = language.twoPlayersGame.results[resultsIndex];
+      resultsIndex = gameLogic.gameResult(playerOneHand, playerTwoHand);
+      result = language.twoPlayersGame.results[resultsIndex];
     }
-
-    const compareHandsSectionElement = (
-      <CompareHandsSection
-        isTwoPlayersGame={true}
-        playerOneHand={this.state.playerOneHand}
-        playerTwoHand={this.state.playerTwoHand}
-        resultsIndex={resultsIndex} />
-    );
-
-    const gameResultsElement = (
-      <GameResults
-        className="static"
-        children={results} />
-    );
-
-    const renderPlayerChoiceSection = (playerID, isOnlyPlayerWithChoice) => {
-      const renderHandChoices = (
-        <HandChoicesSection
-          isTwoPlayersGame={true}
-          heading={language.twoPlayersGame[`player${playerID}Heading`]}
-          onChoseRock={() => this.choseHand(playerID, hands.rock)}
-          onChosePaper={() => this.choseHand(playerID, hands.paper)}
-          onChoseScissors={() => this.choseHand(playerID, hands.scissors)} />
-      );
-
-      const renderWaitingForOpponentChoice = (
-        <WaitingForOpponentChoice
-          children={language.twoPlayersGame[`player${playerID}waiting`]} />
-      );
-
-      return isOnlyPlayerWithChoice ? renderWaitingForOpponentChoice : renderHandChoices;
-    };
-
-    const playerOneChoice = renderPlayerChoiceSection(1, isPlayerOneOnlyPlayerWithChoice);
-    const playerTwoChoice = renderPlayerChoiceSection(2, isPlayerTwoOnlyPlayerWithChoice);
-
-    const renderNewGameButton = (
-      <NewGameButton
-        onClick={this.newGame} />
-    );
-
-    const renderPlayersChoicesSections = (
-      <Media query="(max-width: 640px)">
-        {isMobile => <section
-          className={`${playersChoicesClass} ${isMobile ? `${playersChoicesClass}--mobile` : null}`}>
-          {playerOneChoice}
-          {playerTwoChoice}
-        </section>
-        }
-      </Media>
-    );
 
     return (
       <div className="App">
-        {areBothHandsChosen ? renderNewGameButton : renderPlayersChoicesSections}
-        {areBothHandsChosen && compareHandsSectionElement}
-        {areBothHandsChosen && gameResultsElement}
+        {areBothHandsChosen ? newGameButton(this.newGame) : playersChoicesSections(playerOneChoice, playerTwoChoice)}
+        {areBothHandsChosen && compareHandsSection(playerOneHand, playerTwoHand, resultsIndex)}
+        {areBothHandsChosen && gameResult(result)}
         <HomePageButton />
       </div>
     );

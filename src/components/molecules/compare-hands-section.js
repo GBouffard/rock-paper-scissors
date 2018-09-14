@@ -1,7 +1,8 @@
 import React from 'react';
-import Heading from '../atoms/heading';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Media from 'react-media';
+import Heading from '../atoms/heading';
 import {
   language,
   imageKeywords,
@@ -25,15 +26,21 @@ export default function CompareHandsSection(props) {
     const resultImageUrl = `${baseUrl}/images/${result}_${choice.toLowerCase()}.jpg`;
 
     return (
-      <div
-        className={`${mainClass}__hand`}>
-        <Heading
-          tag={'h3'}
-          children={heading} />
-        <img
-          alt=""
-          src={resultImageUrl} />
-      </div>
+      <Media query="(max-width: 640px)">
+        {isMobile =>
+          <div
+            className={`${mainClass}__hand ${isMobile ? `${mainClass}__hand--mobile` : null}`}>
+            <Heading
+              tag={'h3'}
+              className={`${mainClass}__hand-heading`}
+              children={heading} />
+            <img
+              className={`${isMobile ? `${mainClass}__hand-image--mobile` : null}`}
+              alt=""
+              src={resultImageUrl} />
+          </div>
+        }
+      </Media>
     );
   }
 

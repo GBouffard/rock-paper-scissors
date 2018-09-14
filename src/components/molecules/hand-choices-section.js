@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Media from 'react-media';
 import ImageButton from '../atoms/image-button';
 import Heading from '../atoms/heading';
 import {
@@ -7,7 +8,6 @@ import {
 } from '../../constants/game-constants';
 import '../../css/buttons.css';
 import '../../css/hand-choices-section.css';
-import Media from 'react-media';
 
 const mainClass = 'hand-choices-section';
 

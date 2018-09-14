@@ -2,17 +2,21 @@
   position: relative;
   top: 14%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin: 0 10%;
+}
+
+.compare-hands-section--mobile {
+  justify-content: space-around;
 }
 
 .compare-hands-section__hand {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  margin: 10px 50px 30px;
   min-width: 150px;
-  padding: 0 10px 30px;
+  padding: 0 50px 30px;
   background: firebrick;
   border: 3px solid black;
   /* height: 100%; */
@@ -28,6 +32,11 @@
   background: -o-linear-gradient(firebrick 0%, darkorange 100%);
   background: -ms-linear-gradient(firebrick 0%, darkorange 100%);
   background: linear-gradient(firebrick 0%, darkorange 100%);
+}
+
+.compare-hands-section__hand--mobile {
+  margin: 10px;
+  padding: 0 10px 30px;
 }
 
 .compare-hands-section__hand-heading {

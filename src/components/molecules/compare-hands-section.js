@@ -48,11 +48,15 @@ export default function CompareHandsSection(props) {
   const player2ChosenHand = chosenHandElement(gameLanguage.player2, resultTwo, props.playerTwoHand);
 
   return (
-    <section
-      className={mainClassName}>
-      {player1ChosenHand}
-      {player2ChosenHand}
-    </section>
+    <Media query="(max-width: 640px)">
+      {isMobile =>
+        <section
+          className={`${mainClassName} ${isMobile ? `${mainClassName}--mobile` : null}`}>
+          {player1ChosenHand}
+          {player2ChosenHand}
+        </section>
+      }
+    </Media>
   );
 }
 

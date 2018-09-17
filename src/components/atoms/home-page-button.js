@@ -34,8 +34,9 @@ export default class HomePageButton extends Component {
         {isMobile =>
           <Button
             children={buttonChild}
+            onClick={this.redirect}
             className={`home-page-button ${isMobile ? "home-page-button--mobile" : null}`}
-            onClick={this.redirect} />
+            ariaLabel="back to home page button" />
         }
       </Media>
     );

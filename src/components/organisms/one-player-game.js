@@ -15,7 +15,8 @@ const playerChoiceSection = (choseHand) => (
     heading={language.onePlayerGame.heading}
     onChoseRock={() => choseHand(hands.rock)}
     onChosePaper={() => choseHand(hands.paper)}
-    onChoseScissors={() => choseHand(hands.scissors)} />
+    onChoseScissors={() => choseHand(hands.scissors)}
+    playerID={1} />
 );
 
 const compareHandsSection = (playerOneHand, playerTwoHand, resultsIndex) => (

@@ -8,9 +8,10 @@ import PropTypes from 'prop-types';
 export default function NewGameButton({ onClick }) {
   return (
     <Button
+      onClick={onClick}
       className="new-game-button"
-      children={language.newGame}
-      onClick={onClick}/>
+      aria-label="new game button"
+      children={language.newGame} />
   );
 }
 

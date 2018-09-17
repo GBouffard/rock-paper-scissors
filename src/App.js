@@ -48,8 +48,9 @@ class App extends Component {
     const renderGameModeButton = (isMobile, numberOfPlayers) => (
       <ImageButton
         url={numberOfPlayers === 1 ? urls.onePlayerGame : urls.twoPlayersGame}
+        onClick={numberOfPlayers === 1 ? this.playOnePlayerGame : this.playTwoPlayersGame}
         className={`game-type-button ${isMobile ? 'game-type-button-mobile' : null}`}
-        onClick={numberOfPlayers === 1 ? this.playOnePlayerGame : this.playTwoPlayersGame} />
+        ariaLabel={`${numberOfPlayers === 1 ? "one player game" : "two players game"} button`} />
     );
 
     return (

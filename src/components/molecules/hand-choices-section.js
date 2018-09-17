@@ -11,11 +11,12 @@ import '../../css/hand-choices-section.css';
 
 const mainClass = 'hand-choices-section';
 
-const renderHandImageButton = (isMobileView, url, onClick) => (
+const renderHandImageButton = (isMobileView, url, onClick, ariaLabel) => (
   <ImageButton
     url={url}
+    onClick={onClick}
     className={isMobileView ? 'image-button-mobile' : 'image-button'}
-    onClick={onClick} />
+    ariaLabel={`${ariaLabel} button`} />
 );
 
 export default function HandChoicesSection(props) {
@@ -37,9 +38,9 @@ export default function HandChoicesSection(props) {
 
         <Media query="(max-width: 640px)">
           {isMobile => [
-            renderHandImageButton(isMobile, urls.rockChoice, props.onChoseRock),
-            renderHandImageButton(isMobile, urls.paperChoice, props.onChosePaper),
-            renderHandImageButton(isMobile, urls.scissorsChoice, props.onChoseScissors)
+            renderHandImageButton(isMobile, urls.rockChoice, props.onChoseRock, `Player ${props.playerID} Rock`),
+            renderHandImageButton(isMobile, urls.paperChoice, props.onChosePaper, `Player ${props.playerID} Paper`),
+            renderHandImageButton(isMobile, urls.scissorsChoice, props.onChoseScissors, `Player ${props.playerID} Scissors`)
           ]}
         </Media>
 
@@ -52,6 +53,7 @@ HandChoicesSection.propTypes = {
   onChoseRock: PropTypes.func.isRequired,
   onChosePaper: PropTypes.func.isRequired,
   onChoseScissors: PropTypes.func.isRequired,
+  playerID: PropTypes.number.isRequired,
   heading: PropTypes.string,
-  isTwoPlayersGame: PropTypes.bool,
+  isTwoPlayersGame: PropTypes.bool
 };

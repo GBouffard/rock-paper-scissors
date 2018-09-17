@@ -28,7 +28,8 @@ const individualPlayerChoiceSection = (playerID, isOnlyPlayerWithChoice, choseHa
       heading={language.twoPlayersGame[`player${playerID}Heading`]}
       onChoseRock={() => choseHand(playerID, hands.rock)}
       onChosePaper={() => choseHand(playerID, hands.paper)}
-      onChoseScissors={() => choseHand(playerID, hands.scissors)} />
+      onChoseScissors={() => choseHand(playerID, hands.scissors)}
+      playerID={playerID} />
   );
 
   const waitingForOpponentChoice = (

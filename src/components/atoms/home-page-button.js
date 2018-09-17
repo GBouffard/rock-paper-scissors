@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Media from 'react-media';
 import { Redirect } from 'react-router-dom';
+import Media from 'react-media';
 import Button from './button';
 import {
   language
 } from '../../constants/game-constants';
 
-const homePageRedirectElement = (
+const redirectToHomepage = (
   <Redirect
     to={'/'} />
 );
@@ -16,22 +16,18 @@ export default class HomePageButton extends Component {
     super();
     this.redirect = this.redirect.bind(this);
     this.state = {
-      backToHome: false
+      isClicked: false
     }
   }
 
   redirect() {
     this.setState({
-      backToHome: true
+      isClicked: true
     })
   }
 
   render() {
-    let buttonChild = language.backToHomePage;
-
-    if (this.state.backToHome) {
-      buttonChild = homePageRedirectElement;
-    }
+    const buttonChild = this.state.isClicked ? redirectToHomepage : language.backToHomePage;
 
     return (
       <Media query="(max-width: 640px)">

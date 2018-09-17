@@ -98,6 +98,11 @@ button {
   background: linear-gradient(orangered 0%, darkorange 100%);
 }
 
+.home-page-button--mobile {
+  top: 45px;
+  bottom: auto;
+}
+
 .image-button {
   height: 145px;
 }

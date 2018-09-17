@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import Button from './button';
+import Media from 'react-media';
 import { Redirect } from 'react-router-dom';
+import Button from './button';
 import {
   language
 } from '../../constants/game-constants';
 
 const homePageRedirectElement = (
-     <Redirect
-       to={'/'} />
-  );
+  <Redirect
+    to={'/'} />
+);
 
 export default class HomePageButton extends Component {
   constructor() {
@@ -33,10 +34,14 @@ export default class HomePageButton extends Component {
     }
 
     return (
-      <Button
-        children={buttonChild}
-        className="home-page-button"
-        onClick={this.redirect} />
+      <Media query="(max-width: 640px)">
+        {isMobile =>
+          <Button
+            children={buttonChild}
+            className={`home-page-button ${isMobile ? "home-page-button--mobile" : null}`}
+            onClick={this.redirect} />
+        }
+      </Media>
     );
   }
 };

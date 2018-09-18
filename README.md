@@ -27,6 +27,7 @@ Technologies used:
 - Flexbox
 - React-media
 - Jest
+- Pa11y
 
 Desktop preview:
 ----
@@ -59,6 +60,7 @@ Methodology:
 - I started with unit logic tests and based the game logic on how it is supposed to work.
 - I then started with a 1 player game; and further down the line moved to a 2 players game.
 - I then applied responsive design using react-media
+- I also tested accessibility using Pa11y
 - The React code is gearing towards re-usability.
 - Travis CI is being us as continuous integration tool; insuring that the build is passing.
 
@@ -73,5 +75,4 @@ What to improve:
 - The whole CSS and Flexbox integration can be improved.
 - sass or less compiling could also be added.
 - Component state is fine as a MVP, but an application architecture such as Flux or Redux would be a great addition.
-- Accessibility could be improved.
 - The project is still open and I will keep improving it as I find the time to. Suggestions are more than welcome.

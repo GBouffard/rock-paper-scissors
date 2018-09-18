@@ -4,7 +4,8 @@ import ImageButton from './components/atoms/image-button';
 import Heading from './components/atoms/heading';
 import {
   language,
-  urls
+  urls,
+  baseUrl
 } from './constants/game-constants';
 import './css/App.css';
 import './css/buttons.css';
@@ -40,6 +41,12 @@ class App extends Component {
   }
 
   render() {
+    const renderGameLogo = (isMobile) =>
+      <img
+        alt="Guillaume Rock Paper Scissors logo"
+        className={`App__logo ${isMobile ? 'App__logo--mobile' : null}`}
+        src={`${baseUrl}/images/Guillaume_s_RPS_logo.png`} />;
+
     const renderHeading = (isMobile) =>
       <Heading
         className={isMobile ? 'App__intro-heading--mobile' : 'App__intro-heading'}
@@ -58,7 +65,10 @@ class App extends Component {
         className="App">
 
         <Media query="(max-width: 640px)">
-          {isMobile => renderHeading(isMobile)}
+          {isMobile => [
+            renderGameLogo(isMobile),
+            renderHeading(isMobile)
+          ]}
         </Media>
 
         <div>

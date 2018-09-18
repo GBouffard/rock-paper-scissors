@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import gameLogic from '../../services/game-logic';
+import AppHeader from '../molecules/app-header';
 import HandChoicesSection from '../molecules/hand-choices-section';
 import CompareHandsSection from '../molecules/compare-hands-section';
 import HomePageButton from '../atoms/home-page-button';
@@ -60,6 +61,7 @@ export default class OnePlayerGame extends Component {
 
     return (
       <div className="App">
+        <AppHeader />
         {playerChoiceSection(this.choseHand)}
         {cpuHand && compareHandsSection(playerOneHand, cpuHand, resultsIndex)}
         {result && gameResult(result)}

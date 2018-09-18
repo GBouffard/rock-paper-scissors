@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Media from 'react-media';
 import gameLogic from '../../services/game-logic';
+import AppHeader from '../molecules/app-header';
 import HandChoicesSection from '../molecules/hand-choices-section';
 import CompareHandsSection from '../molecules/compare-hands-section';
 import NewGameButton from '../atoms/new-game-button';
@@ -111,6 +112,7 @@ export default class TwoPlayersGame extends Component {
 
     return (
       <div className="App">
+        <AppHeader />
         {areBothHandsChosen ? newGameButton(this.newGame) : playersChoicesSections(playerOneChoice, playerTwoChoice)}
         {areBothHandsChosen && compareHandsSection(playerOneHand, playerTwoHand, resultsIndex)}
         {areBothHandsChosen && gameResult(result)}

@@ -1,14 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Media from 'react-media';
 import GameLogo from '../atoms/game-logo';
-import {
-  baseUrl
-} from '../../constants/game-constants';
+import DesktopBanner from '../atoms/desktop-banner';
 
 const AppHeader = () =>
   <Media query="(max-width: 640px)">
-    {isMobile => <GameLogo isMobile={isMobile} />}
+    {isMobile => [
+      <GameLogo isMobile={isMobile} />,
+      <DesktopBanner isMobile={isMobile} />
+    ]}
   </Media>
 
 export default AppHeader;

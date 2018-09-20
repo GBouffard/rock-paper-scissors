@@ -11,6 +11,7 @@ const beats = {
 };
 
 const language = {
+  desktopBanner: 'A game that rocks! No pun intended...',
   gameType: 'Choose your game type:',
   onePlayerGame: {
     player1: 'You chose:',

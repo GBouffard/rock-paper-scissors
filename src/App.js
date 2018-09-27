@@ -3,13 +3,18 @@ import { Redirect } from 'react-router-dom';
 import AppHeader from './components/molecules/app-header';
 import Heading from './components/atoms/heading';
 import ImageButton from './components/atoms/image-button';
+import Dashboard from './components/molecules/dashboard';
 import {
   language,
   urls,
 } from './constants/game-constants';
 import './css/App.css';
+import './css/dashboard.css';
 import './css/buttons.css';
 import Media from 'react-media';
+
+// TODO - WILL DEPEND ON HIDDEN FEATURE - COOKIE
+const showDashboard = false;
 
 class App extends Component {
   constructor() {
@@ -54,6 +59,12 @@ class App extends Component {
         ariaLabel={`${numberOfPlayers === 1 ? "one player game" : "two players game"} button`} />
     );
 
+    const dashboard = (shouldShow) => (
+      shouldShow && <Dashboard>
+        Still to come
+      </Dashboard>
+    )
+
     return (
       <div
         className="App">
@@ -72,6 +83,8 @@ class App extends Component {
             ]}
           </Media>
         </div>
+
+        {dashboard(showDashboard)}
 
         {this.state.redirect}
       </div>

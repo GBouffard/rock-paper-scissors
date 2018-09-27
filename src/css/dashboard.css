@@ -1,0 +1,10 @@
+.dashboard {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: darkred;
+  border: 3px solid black;
+  color: lightsalmon;
+  width: 100px;
+  height: 25px;
+}

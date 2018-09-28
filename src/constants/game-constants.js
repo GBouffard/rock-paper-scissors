@@ -55,11 +55,14 @@ const imageKeywords = {
   playerTwo: ['draw', 'lose', 'win']
 };
 
+const winIndexes = ['draws', 'player1', 'player2'];
+
 export {
   hands,
   language,
   baseUrl,
   urls,
   beats,
-  imageKeywords
+  imageKeywords,
+  winIndexes
 };

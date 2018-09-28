@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Stat from '../atoms/stat';
 
 const dashboardClass = 'dashboard';
 
@@ -8,25 +9,25 @@ const Dashboard = (props) => (
     className={`${dashboardClass} ${props.className}`}>
     <div className={`${dashboardClass}__top-row`}>Your Statistics</div>
 
-    <span>
-      <div>Wins</div>
-      <div>1</div>
-    </span>
+    <Stat
+      className={`${dashboardClass}__span`}
+      name="Wins"
+      value={0} />
 
-    <span>
-      <div>Draws</div>
-      <div>2</div>
-    </span>
+    <Stat
+      className={`${dashboardClass}__span`}
+      name="Draws"
+      value={0} />
 
-    <span>
-      <div>Losses</div>
-      <div>3</div>
-    </span>
+    <Stat
+      className={`${dashboardClass}__span`}
+      name="Losses"
+      value={0} />
 
-    <span>
-      <div>Winning percentage</div>
-      <div>%</div>
-    </span>
+    <Stat
+      className={`${dashboardClass}__span`}
+      name="%"
+      value={0} />
   </div>
 );
 

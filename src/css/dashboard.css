@@ -7,9 +7,23 @@
   color: lightsalmon;
   display: grid;
   grid-template-columns: repeat(4, auto);
-  grid-gap: 0.5rem;
-  margin-top: 1rem;
+  grid-gap: 5px;
   padding: 0.5rem;
+}
+
+.dashboard__span {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: lightpink;
+  color: darkred;
+  border: 3px solid black;
+  padding: 5px;
+  min-height: 50px;
+  min-width: 50px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .dashboard__top-row {

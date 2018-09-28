@@ -13,8 +13,7 @@ import './css/dashboard.css';
 import './css/buttons.css';
 import Media from 'react-media';
 
-// TODO - WILL DEPEND ON HIDDEN FEATURE - COOKIE
-const showDashboard = false;
+const shouldShowDashboard = document.cookie.includes("showDashboard=true");
 
 class App extends Component {
   constructor() {
@@ -59,12 +58,6 @@ class App extends Component {
         ariaLabel={`${numberOfPlayers === 1 ? "one player game" : "two players game"} button`} />
     );
 
-    const dashboard = (shouldShow) => (
-      shouldShow && <Dashboard>
-        Still to come
-      </Dashboard>
-    )
-
     return (
       <div
         className="App">
@@ -84,7 +77,7 @@ class App extends Component {
           </Media>
         </div>
 
-        {dashboard(showDashboard)}
+        {shouldShowDashboard && <Dashboard />}
 
         {this.state.redirect}
       </div>

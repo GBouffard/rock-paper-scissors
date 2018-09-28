@@ -28,6 +28,7 @@ Technologies used:
 - React-media
 - Jest
 - Pa11y
+- cookies
 
 Desktop preview:
 ----
@@ -42,12 +43,25 @@ Desktop preview:
 
 How to run it:
 ----
+- General Use:
 ```
 git clone git@github.com:GBouffard/rock-paper-scissors.git
 cd rock-paper-scissors
 ./build.sh
 ```
 PS: the script will ask to chose options regarding running Jest tests; Press a to run all tests, then q to quit the test suite.
+
+- Test accessibility
+```
+npm run test-accessibility
+```
+
+- Show the hidden feature:
+If you want to see the hidden dashboard, you will need to add:
+```
+document.cookie="showDashboard=true"
+```
+within your console and refresh your client.
 
 Deployment link (Github Pages:
 ----
@@ -63,6 +77,7 @@ Methodology:
 - I also tested accessibility using Pa11y
 - The React code is gearing towards re-usability.
 - Travis CI is being us as continuous integration tool; insuring that the build is passing.
+- I also added a hidden feature behind a cookie.
 
 What I learnt:
 ----
